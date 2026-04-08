@@ -1,14 +1,19 @@
-import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
+import Features from "@/components/Features";
+import Characters from "@/components/Characters";
+import Screenshots from "@/components/Screenshots";
+import DownloadCTA from "@/components/DownloadCTA";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <p className="p-20 text-center text-text-secondary">
-          Landing page sections coming...
-        </p>
-      </main>
-    </>
+    <main>
+      <Hero />
+      <StatsBar />
+      <Features />
+      <Characters />
+      <Screenshots />
+      <DownloadCTA />
+    </main>
   );
 }

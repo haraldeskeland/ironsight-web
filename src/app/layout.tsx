@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const lilita = localFont({
   src: "../fonts/LilitaOne-Regular.ttf",
@@ -36,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lilita.variable} ${inter.variable}`}>
       <body className="bg-bg text-text-primary font-body antialiased">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
