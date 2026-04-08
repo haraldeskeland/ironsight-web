@@ -1,0 +1,18 @@
+export const colors = {
+  bg: "#0d0d14",
+  card: "#14141f",
+  cardHover: "#1a1a28",
+  accentOrange: "#f7971e",
+  accentGold: "#ffd200",
+  accentTeal: "#11998e",
+  accentGreen: "#38ef7d",
+  accentRed: "#e94560",
+  accentBlue: "#667eea",
+  textPrimary: "#f0f0f0",
+  textSecondary: "#8888aa",
+  rarityCommon: "#b8b8b8",
+  rarityRare: "#4fc3f7",
+  rarityEpic: "#ab47bc",
+  rarityLegendary: "#ffab00",
+  rarityMythic: "#e94560",
+} as const;
