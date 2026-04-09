@@ -26,9 +26,9 @@ export default function Navbar() {
     <nav
       className="fixed top-0 z-50 w-full transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(3,74,126,0.95)" : "transparent",
-        borderBottom: scrolled ? "4px solid #022d55" : "none",
-        boxShadow: scrolled ? "0 4px 12px rgba(0,0,0,0.3)" : "none",
+        background: scrolled ? "rgba(15,35,62,0.97)" : "transparent",
+        borderBottom: scrolled ? "4px solid #091a30" : "none",
+        boxShadow: scrolled ? "0 4px 12px rgba(0,0,0,0.4)" : "none",
         backdropFilter: scrolled ? "blur(8px)" : "none",
       }}
     >

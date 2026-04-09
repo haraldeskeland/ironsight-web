@@ -197,7 +197,7 @@ body {
   /* Game panel — 3D depth with black border, inner gradient, shine */
   .game-panel {
     position: relative;
-    background: linear-gradient(180deg, #035a9a 0%, #034a7e 100%);
+    background: linear-gradient(180deg, #152d4f 0%, #0F233E 100%);
     border: 1px solid #000;
     border-radius: 16px;
     box-shadow:
@@ -211,19 +211,19 @@ body {
     content: "";
     inset: 3px;
     border-radius: 13px;
-    background: linear-gradient(180deg, #0468af 0%, #035090 100%);
-    box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.1);
+    background: linear-gradient(180deg, #1a3558 0%, #0F233E 100%);
+    box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.06);
     z-index: 0;
   }
   .game-panel::after {
     position: absolute;
     content: "";
-    top: 4px;
-    right: 6px;
-    left: 6px;
+    top: 3px;
+    right: 4px;
+    left: 4px;
     height: 40%;
-    border-radius: 10px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
     z-index: 1;
   }
   .game-panel > * {

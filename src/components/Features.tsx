@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const features = [
-  { icon: "/sprites/Icon_Sword.png", title: "24 Weapons", desc: "From pistols to the BFG-9000. Six rarity tiers, each with 5 upgradable stats.", accent: "#FE4546", shadow: "#7a0000" },
-  { icon: "/sprites/Icon_Shield.png", title: "37 Towers", desc: "Turrets, lasers, mortars, railguns. Independent upgrade paths for every tower.", accent: "#017BCC", shadow: "#003d66" },
-  { icon: "/sprites/Icon_Crown.png", title: "33 Characters", desc: "Soldiers, pirates, monsters, mechs. Each with a unique passive ability.", accent: "#ab47bc", shadow: "#4a1a5e" },
-  { icon: "/sprites/Icon_Compass.png", title: "19 Stages", desc: "Forest to Space Station and beyond. 95 total levels across unique biomes.", accent: "#51D502", shadow: "#1a4a00" },
-  { icon: "/sprites/Icon_Hammer.png", title: "Hub World", desc: "Upgrade 8 permanent buildings. Every upgrade boosts all future runs.", accent: "#FE8F37", shadow: "#7a3a00" },
-  { icon: "/sprites/Icon_Golden_Pass.png", title: "Battle Pass", desc: "30 tiers per season. Daily and weekly quests for coins, gems, and cosmetics.", accent: "#FFDC2F", shadow: "#7a5200" },
+  { icon: "/sprites/Icon_Sword.png", title: "24 Weapons", desc: "From pistols to the BFG-9000. Six rarity tiers, each with 5 upgradable stats." },
+  { icon: "/sprites/Icon_Shield.png", title: "37 Towers", desc: "Turrets, lasers, mortars, railguns. Independent upgrade paths for every tower." },
+  { icon: "/sprites/Icon_Crown.png", title: "33 Characters", desc: "Soldiers, pirates, monsters, mechs. Each with a unique passive ability." },
+  { icon: "/sprites/Icon_Compass.png", title: "19 Stages", desc: "Forest to Space Station and beyond. 95 total levels across unique biomes." },
+  { icon: "/sprites/Icon_Hammer.png", title: "Hub World", desc: "Upgrade 8 permanent buildings. Every upgrade boosts all future runs." },
+  { icon: "/sprites/Icon_Golden_Pass.png", title: "Battle Pass", desc: "30 tiers per season. Daily and weekly quests for coins, gems, and cosmetics." },
 ];
 
 export default function Features() {
@@ -47,46 +47,29 @@ export default function Features() {
           Everything you need to defend, upgrade, and dominate
         </p>
 
-        <div ref={ref} className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={ref} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}
               data-feature-card
-              className="reveal-hidden game-panel overflow-hidden transition-transform duration-200 hover:-translate-y-1"
+              className="reveal-hidden game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
             >
-              <div
-                className="flex items-center justify-center py-5"
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-white/10">
+                <Image src={f.icon} alt={f.title} width={40} height={40} />
+              </div>
+              <h3
+                className="font-game text-lg text-white"
                 style={{
-                  background: `linear-gradient(135deg, ${f.accent}25, ${f.accent}08)`,
-                  borderBottom: "2px solid rgba(0,0,0,0.2)",
+                  WebkitTextStroke: "1px #000",
+                  paintOrder: "stroke fill",
+                  textShadow: "0 2px 0 #000",
                 }}
               >
-                <div
-                  className="flex h-16 w-16 items-center justify-center rounded-xl"
-                  style={{
-                    background: "rgba(0,0,0,0.2)",
-                    border: `2px solid ${f.accent}55`,
-                    boxShadow: `0 0 10px ${f.accent}30`,
-                  }}
-                >
-                  <Image src={f.icon} alt={f.title} width={36} height={36} />
-                </div>
-              </div>
-              <div className="p-5 text-center">
-                <h3
-                  className="font-game text-lg text-white"
-                  style={{
-                    WebkitTextStroke: "1px #000",
-                    paintOrder: "stroke fill",
-                    textShadow: "0 2px 0 #000",
-                  }}
-                >
-                  {f.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/60">
-                  {f.desc}
-                </p>
-              </div>
+                {f.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/60">
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>
