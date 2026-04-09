@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 const rarityColors: Record<string, { color: string; dark: string }> = {
   Common:    { color: "#b8b8b8", dark: "#6a6a6a" },
@@ -23,30 +20,6 @@ const characters = [
 ];
 
 export default function Characters() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const cards = el.querySelectorAll("[data-char-card]");
-          cards.forEach((card, i) => {
-            const htmlCard = card as HTMLElement;
-            htmlCard.style.animationDelay = `${i * 80}ms`;
-            htmlCard.classList.remove("reveal-hidden");
-            htmlCard.classList.add("animate-scale-up");
-          });
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="characters" className="relative py-24">
       <div
@@ -63,41 +36,41 @@ export default function Characters() {
           Five rarity tiers from Common to Mythic
         </p>
 
-        <div ref={ref} className="mt-12 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
           {characters.map((c) => {
             const r = rarityColors[c.rarity];
             return (
               <div
                 key={c.name}
-                data-char-card
-                className="reveal-hidden flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
+                className="flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
               >
-                {/* Glow behind character — bigger, more intense */}
-                <div className="relative flex items-center justify-center" style={{ width: "100%", aspectRatio: "3/4" }}>
+                {/* Glow + character */}
+                <div className="relative w-full" style={{ paddingBottom: "110%" }}>
+                  {/* Glow */}
                   <div
-                    className="absolute"
+                    className="absolute inset-0 m-auto"
                     style={{
-                      width: "120%",
-                      height: "80%",
+                      width: "80%",
+                      height: "70%",
                       borderRadius: "50%",
-                      background: `radial-gradient(circle, ${r.color}60 0%, ${r.color}30 30%, ${r.color}10 55%, transparent 75%)`,
-                      filter: "blur(16px)",
+                      background: `radial-gradient(circle, ${r.color}60 0%, ${r.color}25 35%, transparent 70%)`,
+                      filter: "blur(20px)",
+                      top: "15%",
                     }}
                   />
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={`/characters/${c.img}.png`}
-                      alt={c.name}
-                      fill
-                      className="object-contain"
-                      style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.7))" }}
-                    />
-                  </div>
+                  {/* Character — inset so it never touches edges */}
+                  <Image
+                    src={`/characters/${c.img}.png`}
+                    alt={c.name}
+                    fill
+                    className="object-contain p-3"
+                    style={{ filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.7))" }}
+                  />
                 </div>
 
                 {/* Name */}
                 <h3
-                  className="mt-1 font-game text-xl text-white"
+                  className="-mt-2 font-game text-xl text-white"
                   style={{
                     WebkitTextStroke: "1.5px #000",
                     paintOrder: "stroke fill",
@@ -107,7 +80,7 @@ export default function Characters() {
                   {c.name}
                 </h3>
 
-                {/* Rarity pill — subtle rounded rect, not full circle */}
+                {/* Rarity pill */}
                 <div
                   className="relative mt-1.5 overflow-hidden rounded-lg px-4 py-0.5"
                   style={{

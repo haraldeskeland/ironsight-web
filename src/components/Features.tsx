@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 const features = [
   { icon: "/sprites/Icon_Sword.png", title: "24 Weapons", desc: "From pistols to the BFG-9000. Six rarity tiers, each with 5 upgradable stats." },
@@ -13,30 +10,6 @@ const features = [
 ];
 
 export default function Features() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const cards = el.querySelectorAll("[data-feature-card]");
-          cards.forEach((card, i) => {
-            const htmlCard = card as HTMLElement;
-            htmlCard.style.animationDelay = `${i * 100}ms`;
-            htmlCard.classList.remove("reveal-hidden");
-            htmlCard.classList.add("animate-scale-up");
-          });
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="features" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -47,12 +20,11 @@ export default function Features() {
           Everything you need to defend, upgrade, and dominate
         </p>
 
-        <div ref={ref} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}
-              data-feature-card
-              className="reveal-hidden game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
+              className="game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
             >
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-white/10">
                 <Image src={f.icon} alt={f.title} width={40} height={40} />

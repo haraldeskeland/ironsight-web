@@ -11,10 +11,10 @@ export default function Home() {
     <main>
       <Hero />
       <ScrollReveal><StatsBar /></ScrollReveal>
-      <ScrollReveal animation="scale-up"><Features /></ScrollReveal>
-      <ScrollReveal animation="slide-up"><Characters /></ScrollReveal>
-      <ScrollReveal animation="slide-up"><Screenshots /></ScrollReveal>
-      <ScrollReveal animation="scale-up"><DownloadCTA /></ScrollReveal>
+      <ScrollReveal><Features /></ScrollReveal>
+      <ScrollReveal><Characters /></ScrollReveal>
+      <ScrollReveal><Screenshots /></ScrollReveal>
+      <ScrollReveal><DownloadCTA /></ScrollReveal>
     </main>
   );
 }
