@@ -52,35 +52,83 @@ body {
     text-shadow: 0 2px 0 rgba(0,0,0,0.15);
   }
 
-  /* 3D Game Buttons — thick shadow, black stroke border, shine */
+  /* CoC-style multi-directional text extrusion */
+  .coc-text {
+    text-shadow:
+      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+      -1px -1px #000, 1px -1px #000,
+      1px 0 #000, -1px 0 #000,
+      1px 1px #000, -1px 1px #000,
+      1px 2px #000, -1px 2px #000;
+  }
+
+  /* 3D Game Buttons — CoC/Brawl Stars hybrid */
   .btn-primary {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 16px;
-    padding: 16px 36px;
+    border-radius: 12px;
+    padding: 18px 40px;
     font-family: var(--font-lilita);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2em;
     color: #ffffff;
-    -webkit-text-stroke: 1.5px #000000;
-    paint-order: stroke fill;
-    text-shadow: 0 3px 0 #000000;
-    background: linear-gradient(180deg, #FFE55A 0%, #FFDC2F 30%, #FEB72F 70%, #f5a623 100%);
-    border: 3px solid #000000;
-    box-shadow: 0 8px 0 #7a5200, 0 10px 20px rgba(0,0,0,0.4), inset 0 3px 0 rgba(255,255,255,0.5);
+    text-shadow:
+      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+      -1px -1px #000, 1px -1px #000,
+      1px 0 #000, -1px 0 #000,
+      1px 1px #000, -1px 1px #000,
+      1px 2px #000, -1px 2px #000;
+    background: linear-gradient(180deg, #fff3a0 0%, #FFDC2F 20%, #FEB72F 60%, #d48800 100%);
+    border: 1px solid #000;
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 6px 0 2px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s linear;
     text-decoration: none;
+  }
+  .btn-primary::before {
+    position: absolute;
+    content: "";
+    inset: 2px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ffe44a 0%, #f5b800 100%);
+    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.25);
+    z-index: 0;
+  }
+  .btn-primary::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    height: 45%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,200,0.6) 0%, rgba(255,220,47,0.0) 100%);
+    z-index: 0;
+  }
+  .btn-primary span, .btn-primary {
+    position: relative;
+    z-index: 1;
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 0 #7a5200, 0 14px 28px rgba(0,0,0,0.5), inset 0 3px 0 rgba(255,255,255,0.5);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 8px 0 2px rgba(0,0,0,0.3);
   }
   .btn-primary:active {
-    transform: translateY(4px);
-    box-shadow: 0 4px 0 #7a5200, 0 6px 12px rgba(0,0,0,0.3), inset 0 3px 0 rgba(255,255,255,0.5);
+    transform: scale(0.95);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 3px 0 2px rgba(0,0,0,0.2);
   }
 
   .btn-secondary {
@@ -89,28 +137,66 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 16px;
-    padding: 16px 36px;
+    border-radius: 12px;
+    padding: 18px 40px;
     font-family: var(--font-lilita);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2em;
     color: #ffffff;
-    -webkit-text-stroke: 1.5px #000000;
-    paint-order: stroke fill;
-    text-shadow: 0 3px 0 #000000;
-    background: linear-gradient(180deg, #7BF03A 0%, #51D502 30%, #3aab00 70%, #2d9000 100%);
-    border: 3px solid #000000;
-    box-shadow: 0 8px 0 #1a4a00, 0 10px 20px rgba(0,0,0,0.4), inset 0 3px 0 rgba(255,255,255,0.4);
+    text-shadow:
+      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+      -1px -1px #000, 1px -1px #000,
+      1px 0 #000, -1px 0 #000,
+      1px 1px #000, -1px 1px #000,
+      1px 2px #000, -1px 2px #000;
+    background: linear-gradient(180deg, #d3ebb7 0%, #85c03f 40%, #366c1b 100%);
+    border: 1px solid #000;
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 6px 0 2px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s linear;
     text-decoration: none;
+  }
+  .btn-secondary::before {
+    position: absolute;
+    content: "";
+    inset: 2px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #7fc427, #58a221);
+    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.23);
+    z-index: 0;
+  }
+  .btn-secondary::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    height: 45%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #d0e878 0%, rgba(152,208,64,0.0) 100%);
+    z-index: 0;
+  }
+  .btn-secondary span, .btn-secondary {
+    position: relative;
+    z-index: 1;
   }
   .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 0 #1a4a00, 0 14px 28px rgba(0,0,0,0.5), inset 0 3px 0 rgba(255,255,255,0.4);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 8px 0 2px rgba(0,0,0,0.3);
   }
   .btn-secondary:active {
-    transform: translateY(4px);
-    box-shadow: 0 4px 0 #1a4a00, 0 6px 12px rgba(0,0,0,0.3), inset 0 3px 0 rgba(255,255,255,0.4);
+    transform: scale(0.95);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 3px 0 2px rgba(0,0,0,0.2);
   }
 
   .btn-outline {
@@ -119,29 +205,66 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 16px;
-    padding: 16px 36px;
+    border-radius: 12px;
+    padding: 18px 40px;
     font-family: var(--font-lilita);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2em;
     color: #ffffff;
-    -webkit-text-stroke: 1.5px #000000;
-    paint-order: stroke fill;
-    text-shadow: 0 3px 0 #000000;
-    background: rgba(255,255,255,0.12);
-    border: 3px solid #000000;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.2);
+    text-shadow:
+      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+      -1px -1px #000, 1px -1px #000,
+      1px 0 #000, -1px 0 #000,
+      1px 1px #000, -1px 1px #000,
+      1px 2px #000, -1px 2px #000;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+    border: 1px solid #000;
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 6px 0 2px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+    transition: transform 0.1s linear;
     text-decoration: none;
+  }
+  .btn-outline::before {
+    position: absolute;
+    content: "";
+    inset: 2px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.1);
+    z-index: 0;
+  }
+  .btn-outline::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    height: 45%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.0) 100%);
+    z-index: 0;
+  }
+  .btn-outline span, .btn-outline {
+    position: relative;
+    z-index: 1;
   }
   .btn-outline:hover {
     transform: translateY(-2px);
-    background: rgba(255,220,47,0.15);
-    box-shadow: 0 8px 0 rgba(0,0,0,0.4), 0 12px 24px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.2);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #FFDC2F,
+      0 8px 0 2px rgba(0,0,0,0.3);
   }
   .btn-outline:active {
-    transform: translateY(3px);
-    box-shadow: 0 3px 0 rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.2);
+    transform: scale(0.95);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 2px #000,
+      0 3px 0 2px rgba(0,0,0,0.2);
   }
 
   /* Game panel — dark blue with black border for pop */

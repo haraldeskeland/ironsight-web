@@ -122,21 +122,19 @@ export default function Characters() {
                   {/* Name banner — green 3D button */}
                   <div className="relative z-20 px-2 pb-1">
                     <div
-                      className="w-full rounded-lg py-1.5 text-center"
+                      className="relative w-full overflow-hidden rounded-lg py-1.5 text-center"
                       style={{
-                        background: "linear-gradient(180deg, #7BF03A, #51D502, #3aab00)",
-                        border: "2px solid #000000",
-                        boxShadow: "0 4px 0 #000000, 0 5px 8px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.3)",
+                        background: "linear-gradient(180deg, #d3ebb7 0%, #85c03f 40%, #366c1b 100%)",
+                        border: "1px solid #000",
+                        boxShadow: "0 0 0 1px #000, 0 3px 0 1px rgba(0,0,0,0.25)",
                       }}
                     >
+                      {/* Inner gradient */}
+                      <div className="absolute inset-[2px] rounded-md" style={{ background: "linear-gradient(180deg, #7fc427, #58a221)", boxShadow: "inset 0 0 2px 1px rgba(255,255,255,0.2)" }} />
+                      {/* Shine */}
+                      <div className="absolute top-[3px] right-[3px] left-[3px] h-[45%] rounded-md" style={{ background: "linear-gradient(180deg, #d0e878, rgba(152,208,64,0))" }} />
                       <span
-                        className="font-game text-sm"
-                        style={{
-                          color: "#ffffff",
-                          WebkitTextStroke: "1px #000000",
-                          paintOrder: "stroke fill",
-                          textShadow: "0 2px 0 #000000",
-                        }}
+                        className="coc-text relative z-10 font-game text-sm text-white"
                       >
                         {c.name}
                       </span>
