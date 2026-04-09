@@ -26,8 +26,8 @@ export default function Features() {
               key={f.title}
               className="game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
             >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-white/10">
-                <Image src={f.icon} alt={f.title} width={40} height={40} />
+              <div className="mx-auto mb-4">
+                <Image src={f.icon} alt={f.title} width={64} height={64} />
               </div>
               <h3
                 className="font-game text-2xl text-white"

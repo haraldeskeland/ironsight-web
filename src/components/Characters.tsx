@@ -45,27 +45,33 @@ export default function Characters() {
                 className="flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
               >
                 {/* Glow + character */}
-                <div className="relative w-full" style={{ paddingBottom: "110%" }}>
+                <div className="relative w-full">
                   {/* Glow */}
                   <div
-                    className="absolute inset-0 m-auto"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                     style={{
-                      width: "80%",
-                      height: "70%",
+                      width: "90%",
+                      height: "80%",
                       borderRadius: "50%",
                       background: `radial-gradient(circle, ${r.color}60 0%, ${r.color}25 35%, transparent 70%)`,
                       filter: "blur(20px)",
-                      top: "15%",
                     }}
                   />
-                  {/* Character — inset so it never touches edges */}
-                  <Image
-                    src={`/characters/${c.img}.png`}
-                    alt={c.name}
-                    fill
-                    className="object-contain p-3"
-                    style={{ filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.7))" }}
-                  />
+                  {/* Character — fixed size, not fill, so it renders at natural proportions */}
+                  <div className="flex justify-center">
+                    <Image
+                      src={`/characters/${c.img}.png`}
+                      alt={c.name}
+                      width={200}
+                      height={267}
+                      className="relative"
+                      style={{
+                        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.7))",
+                        maxWidth: "100%",
+                        height: "auto",
+                      }}
+                    />
+                  </div>
                 </div>
 
                 {/* Name */}
