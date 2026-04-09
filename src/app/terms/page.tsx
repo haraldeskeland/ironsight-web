@@ -97,7 +97,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">11. Contact</h2>
           <p>
-            If you have questions about these Terms, please contact us via the <span className="text-accent-orange">Support page</span> on this website.
+            If you have questions about these Terms, please contact us via the <span className="text-accent-gold">Support page</span> on this website.
           </p>
           <p className="mt-3">
             <strong className="text-white">Company:</strong> HMT Eskeland

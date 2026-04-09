@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0d0d14;
-  --color-card: #14141f;
-  --color-card-hover: #1a1a28;
-  --color-accent-orange: #f7971e;
-  --color-accent-gold: #ffd200;
-  --color-accent-teal: #11998e;
-  --color-accent-green: #38ef7d;
-  --color-accent-red: #e94560;
-  --color-accent-blue: #667eea;
-  --color-text-primary: #f0f0f0;
-  --color-text-secondary: #8888aa;
+  --color-bg: #045D9E;
+  --color-bg-dark: #034a7e;
+  --color-card: #03498a;
+  --color-card-hover: #0558a3;
+  --color-accent-orange: #FE8F37;
+  --color-accent-gold: #FFDC2F;
+  --color-accent-green: #51D502;
+  --color-accent-red: #FE4546;
+  --color-accent-blue: #017BCC;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0c4de;
   --color-rarity-common: #b8b8b8;
   --color-rarity-rare: #4fc3f7;
   --color-rarity-epic: #ab47bc;
   --color-rarity-legendary: #ffab00;
-  --color-rarity-mythic: #e94560;
+  --color-rarity-mythic: #FE4546;
 
   --font-game: var(--font-lilita);
   --font-body: var(--font-inter);
@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  background-color: #0d0d14;
+  background-color: #045D9E;
 }
 
 .scroll-hide::-webkit-scrollbar {
@@ -37,3 +37,112 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* 3D Game Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-family: var(--font-lilita);
+  font-size: 1.125rem;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #FFDC2F, #FEB72F);
+  border: none;
+  border-bottom: 5px solid #c78a00;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-bottom-width 0.1s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  border-bottom-width: 7px;
+}
+.btn-primary:active {
+  transform: translateY(1px);
+  border-bottom-width: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-family: var(--font-lilita);
+  font-size: 1.125rem;
+  color: #ffffff;
+  background: linear-gradient(180deg, #51D502, #3aab00);
+  border: none;
+  border-bottom: 5px solid #2d8400;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-bottom-width 0.1s ease;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-bottom-width: 7px;
+}
+.btn-secondary:active {
+  transform: translateY(1px);
+  border-bottom-width: 2px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-family: var(--font-lilita);
+  font-size: 1.125rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-bottom: 5px solid rgba(255,255,255,0.15);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: #FFDC2F;
+  background: rgba(255,220,47,0.08);
+}
+
+/* Staggered reveal animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px) rotate(4deg); }
+  to { opacity: 1; transform: translateX(0) rotate(0deg); }
+}
+@keyframes scaleUpFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up { animation: slideUpFade 0.7s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.7s ease-out forwards; }
+.animate-scale-up { animation: scaleUpFade 0.6s ease-out forwards; }
+.animate-slide-left { animation: slideFromLeft 0.7s ease-out forwards; }
+.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+
+.reveal-hidden { opacity: 0; }

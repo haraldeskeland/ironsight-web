@@ -2,7 +2,19 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-export default function ScrollReveal({ children }: { children: ReactNode }) {
+interface Props {
+  children: ReactNode;
+  animation?: "slide-up" | "slide-right" | "scale-up";
+  stagger?: boolean;
+  staggerDelay?: number;
+}
+
+export default function ScrollReveal({
+  children,
+  animation = "slide-up",
+  stagger = false,
+  staggerDelay = 100,
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -11,8 +23,17 @@ export default function ScrollReveal({ children }: { children: ReactNode }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add("opacity-100", "translate-y-0");
-          el.classList.remove("opacity-0", "translate-y-6");
+          if (stagger) {
+            const items = el.querySelectorAll("[data-stagger-item]");
+            items.forEach((item, i) => {
+              const htmlItem = item as HTMLElement;
+              htmlItem.style.animationDelay = `${i * staggerDelay}ms`;
+              htmlItem.classList.remove("reveal-hidden");
+              htmlItem.classList.add(`animate-${animation}`);
+            });
+          }
+          el.classList.remove("reveal-hidden");
+          el.classList.add(`animate-${animation}`);
           observer.unobserve(el);
         }
       },
@@ -20,10 +41,10 @@ export default function ScrollReveal({ children }: { children: ReactNode }) {
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [animation, stagger, staggerDelay]);
 
   return (
-    <div ref={ref} className="translate-y-6 opacity-0 transition-all duration-700 ease-out">
+    <div ref={ref} className="reveal-hidden">
       {children}
     </div>
   );

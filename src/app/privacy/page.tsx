@@ -42,8 +42,8 @@ export default function PrivacyPage() {
             Third-party ad networks are governed by their own privacy policies. We encourage you to review them:
           </p>
           <ul className="mt-3 list-disc list-inside space-y-1">
-            <li>IronSource: <span className="text-accent-orange">ironsrc.com/privacy-policy</span></li>
-            <li>Unity Ads: <span className="text-accent-orange">unity.com/legal/privacy-policy</span></li>
+            <li>IronSource: <span className="text-accent-gold">ironsrc.com/privacy-policy</span></li>
+            <li>Unity Ads: <span className="text-accent-gold">unity.com/legal/privacy-policy</span></li>
           </ul>
         </section>
 
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">7. Your Rights</h2>
           <p>
-            You have the right to request deletion of any data associated with your device. To submit a deletion request, contact us via our <span className="text-accent-orange">Support page</span>. We will process your request within 30 days. Note that anonymous, aggregated analytics data cannot be attributed to a specific user and cannot be individually deleted.
+            You have the right to request deletion of any data associated with your device. To submit a deletion request, contact us via our <span className="text-accent-gold">Support page</span>. We will process your request within 30 days. Note that anonymous, aggregated analytics data cannot be attributed to a specific user and cannot be individually deleted.
           </p>
         </section>
 
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">9. Contact</h2>
           <p>
-            If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us via the <span className="text-accent-orange">Support page</span> on this website.
+            If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us via the <span className="text-accent-gold">Support page</span> on this website.
           </p>
           <p className="mt-3">
             <strong className="text-white">Company:</strong> HMT Eskeland
