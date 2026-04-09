@@ -27,11 +27,9 @@ export default function Features() {
           {features.map((f) => (
             <ScrollReveal key={f.title}>
             <div
-              className="game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
+              className="game-panel flex flex-col items-center p-6 text-center transition-transform duration-200 hover:-translate-y-1"
             >
-              <div className="mx-auto mb-4">
-                <Image src={f.icon} alt={f.title} width={64} height={64} />
-              </div>
+              <Image src={f.icon} alt={f.title} width={64} height={64} className="mb-4" />
               <h3
                 className="font-game text-2xl text-white"
                 style={{
