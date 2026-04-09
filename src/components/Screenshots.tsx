@@ -8,21 +8,36 @@ const screenshots = [
 
 export default function Screenshots() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <h2 className="text-center font-game text-4xl text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>SEE IT IN ACTION</h2>
-      <p className="mt-2 text-center text-text-secondary">Gameplay screenshots</p>
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-        {screenshots.map((s) => (
-          <div
-            key={s.label}
-            className="relative h-44 overflow-hidden rounded-2xl border border-white/10"
-            style={{ borderBottom: "4px solid rgba(0,0,0,0.2)" }}
-          >
-            <Image src={s.img} alt={s.label} fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <span className="absolute bottom-3 left-3 font-game text-sm text-white" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>{s.label}</span>
-          </div>
-        ))}
+    <section className="bg-white py-16">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="game-text-dark text-center font-game text-4xl">SEE IT IN ACTION</h2>
+        <p className="mt-2 text-center text-gray-500">Gameplay screenshots</p>
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {screenshots.map((s) => (
+            <div
+              key={s.label}
+              className="relative h-48 overflow-hidden rounded-2xl"
+              style={{
+                border: "3px solid #000000",
+                boxShadow: "0 6px 0 #000000, 0 8px 16px rgba(0,0,0,0.2)",
+              }}
+            >
+              <Image src={s.img} alt={s.label} fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <span
+                className="absolute bottom-3 left-3 font-game text-sm"
+                style={{
+                  color: "#ffffff",
+                  WebkitTextStroke: "1px #000000",
+                  paintOrder: "stroke fill",
+                  textShadow: "0 2px 0 #000000",
+                }}
+              >
+                {s.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

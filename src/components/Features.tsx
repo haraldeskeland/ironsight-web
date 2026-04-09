@@ -43,13 +43,13 @@ export default function Features() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/sprites/Background_03.png')" }}
       />
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative mx-auto max-w-6xl px-6">
         <h2 className="game-text text-center font-game text-4xl">
           BUILT FOR BATTLE
         </h2>
-        <p className="mt-2 text-center text-white/60">
+        <p className="mt-2 text-center text-white/70">
           Everything you need to defend, upgrade, and dominate
         </p>
 
@@ -64,15 +64,15 @@ export default function Features() {
                 className="flex items-center justify-center py-5"
                 style={{
                   background: `linear-gradient(135deg, ${f.accent}30, ${f.accent}10)`,
-                  borderBottom: "2px solid rgba(255,255,255,0.08)",
+                  borderBottom: "2px solid rgba(0,0,0,0.3)",
                 }}
               >
                 <div
                   className="flex h-16 w-16 items-center justify-center rounded-xl"
                   style={{
-                    background: "rgba(0,0,0,0.2)",
-                    border: `2px solid ${f.accent}55`,
-                    boxShadow: `0 0 12px ${f.accent}30`,
+                    background: "rgba(0,0,0,0.25)",
+                    border: "2px solid #000000",
+                    boxShadow: `0 3px 0 #000000, 0 0 12px ${f.accent}40`,
                   }}
                 >
                   <Image src={f.icon} alt={f.title} width={36} height={36} />
@@ -82,15 +82,15 @@ export default function Features() {
                 <h3
                   className="font-game text-lg"
                   style={{
-                    color: f.accent,
-                    WebkitTextStroke: "1px #1a1a1a",
+                    color: "#ffffff",
+                    WebkitTextStroke: "1px #000000",
                     paintOrder: "stroke fill",
-                    textShadow: "0 2px 0 #1a1a1a",
+                    textShadow: "0 2px 0 #000000",
                   }}
                 >
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
                   {f.desc}
                 </p>
               </div>

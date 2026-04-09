@@ -39,21 +39,20 @@ body {
 }
 
 @layer components {
-  /* Clash-style text stroke — white text with dark outline and drop shadow */
+  /* Hard drop shadow text — solid black offset, no blur */
   .game-text {
     color: #ffffff;
-    -webkit-text-stroke: 2px #1a1a1a;
+    -webkit-text-stroke: 2.5px #000000;
     paint-order: stroke fill;
-    text-shadow: 0 3px 0 #1a1a1a, 0 4px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 4px 0 #000000;
   }
   .game-text-dark {
-    color: #ffffff;
-    -webkit-text-stroke: 2px #5a3a00;
-    paint-order: stroke fill;
-    text-shadow: 0 2px 0 #5a3a00, 0 3px 6px rgba(0,0,0,0.3);
+    color: #1a1a1a;
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.15);
   }
 
-  /* 3D Game Buttons — Clash of Clans / Brawl Stars style */
+  /* 3D Game Buttons — thick shadow, black stroke border, shine */
   .btn-primary {
     position: relative;
     display: inline-flex;
@@ -65,23 +64,23 @@ body {
     font-family: var(--font-lilita);
     font-size: 1.25rem;
     color: #ffffff;
-    -webkit-text-stroke: 1.5px #6b4400;
+    -webkit-text-stroke: 1.5px #000000;
     paint-order: stroke fill;
-    text-shadow: 0 2px 0 #6b4400, 0 3px 6px rgba(0,0,0,0.3);
+    text-shadow: 0 3px 0 #000000;
     background: linear-gradient(180deg, #FFE55A 0%, #FFDC2F 30%, #FEB72F 70%, #f5a623 100%);
-    border: 3px solid #c78a00;
-    box-shadow: 0 8px 0 #9e6b00, 0 10px 20px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4);
+    border: 3px solid #000000;
+    box-shadow: 0 8px 0 #7a5200, 0 10px 20px rgba(0,0,0,0.4), inset 0 3px 0 rgba(255,255,255,0.5);
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     text-decoration: none;
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 0 #9e6b00, 0 12px 24px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 10px 0 #7a5200, 0 14px 28px rgba(0,0,0,0.5), inset 0 3px 0 rgba(255,255,255,0.5);
   }
   .btn-primary:active {
     transform: translateY(4px);
-    box-shadow: 0 4px 0 #9e6b00, 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 4px 0 #7a5200, 0 6px 12px rgba(0,0,0,0.3), inset 0 3px 0 rgba(255,255,255,0.5);
   }
 
   .btn-secondary {
@@ -95,23 +94,23 @@ body {
     font-family: var(--font-lilita);
     font-size: 1.25rem;
     color: #ffffff;
-    -webkit-text-stroke: 1.5px #1a5c00;
+    -webkit-text-stroke: 1.5px #000000;
     paint-order: stroke fill;
-    text-shadow: 0 2px 0 #1a5c00, 0 3px 6px rgba(0,0,0,0.3);
+    text-shadow: 0 3px 0 #000000;
     background: linear-gradient(180deg, #7BF03A 0%, #51D502 30%, #3aab00 70%, #2d9000 100%);
-    border: 3px solid #2d8400;
-    box-shadow: 0 8px 0 #1a5c00, 0 10px 20px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.35);
+    border: 3px solid #000000;
+    box-shadow: 0 8px 0 #1a4a00, 0 10px 20px rgba(0,0,0,0.4), inset 0 3px 0 rgba(255,255,255,0.4);
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     text-decoration: none;
   }
   .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 0 #1a5c00, 0 12px 24px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.35);
+    box-shadow: 0 10px 0 #1a4a00, 0 14px 28px rgba(0,0,0,0.5), inset 0 3px 0 rgba(255,255,255,0.4);
   }
   .btn-secondary:active {
     transform: translateY(4px);
-    box-shadow: 0 4px 0 #1a5c00, 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.35);
+    box-shadow: 0 4px 0 #1a4a00, 0 6px 12px rgba(0,0,0,0.3), inset 0 3px 0 rgba(255,255,255,0.4);
   }
 
   .btn-outline {
@@ -125,32 +124,32 @@ body {
     font-family: var(--font-lilita);
     font-size: 1.25rem;
     color: #ffffff;
-    -webkit-text-stroke: 1px rgba(0,0,0,0.3);
+    -webkit-text-stroke: 1.5px #000000;
     paint-order: stroke fill;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-    background: rgba(255,255,255,0.1);
-    border: 3px solid rgba(255,255,255,0.25);
-    box-shadow: 0 6px 0 rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 3px 0 #000000;
+    background: rgba(255,255,255,0.12);
+    border: 3px solid #000000;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.2);
     cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.2s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
     text-decoration: none;
   }
   .btn-outline:hover {
     transform: translateY(-2px);
-    border-color: #FFDC2F;
-    box-shadow: 0 8px 0 rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+    background: rgba(255,220,47,0.15);
+    box-shadow: 0 8px 0 rgba(0,0,0,0.4), 0 12px 24px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.2);
   }
   .btn-outline:active {
     transform: translateY(3px);
-    box-shadow: 0 3px 0 rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.2);
   }
 
-  /* Game panel — dark blue rounded panel like in-game popups */
+  /* Game panel — dark blue with black border for pop */
   .game-panel {
     background: linear-gradient(180deg, #035a9a 0%, #034a7e 100%);
-    border: 3px solid #02396b;
+    border: 3px solid #000000;
     border-radius: 20px;
-    box-shadow: 0 6px 0 #022d55, 0 8px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 6px 0 #001a33, 0 8px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
   }
 
   .reveal-hidden {

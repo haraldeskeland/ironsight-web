@@ -49,21 +49,17 @@ export default function Characters() {
 
   return (
     <section id="characters" className="relative py-16">
-      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/sprites/Background_04.png')" }}
       />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/35" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <h2
-          className="game-text text-center font-game text-4xl"
-          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
-        >
-          COLLECT &amp; LEVEL 33 CHARACTERS
+        <h2 className="game-text text-center font-game text-4xl">
+          COLLECT & LEVEL 33 CHARACTERS
         </h2>
-        <p className="mt-2 text-center text-text-secondary">
+        <p className="mt-2 text-center text-white/70">
           Five rarity tiers from Common to Mythic
         </p>
 
@@ -75,22 +71,23 @@ export default function Characters() {
                 key={c.name}
                 data-char-card
                 className="reveal-hidden group relative flex flex-col items-center transition-transform duration-200 hover:-translate-y-2"
-                style={{
-                  width: 180,
-                  height: 260,
-                }}
+                style={{ width: 180, height: 260 }}
               >
-                {/* Outer card frame */}
                 <div
                   className="relative flex h-full w-full flex-col overflow-hidden rounded-xl"
                   style={{
-                    border: `3px solid ${colors.border}`,
-                    borderBottom: `6px solid ${colors.dark}`,
+                    border: "4px solid #000000",
                     background: "linear-gradient(135deg, #5bc0ff 0%, #0288d1 50%, #01579b 100%)",
-                    boxShadow: `0 4px 16px rgba(0,0,0,0.4), 0 0 12px ${colors.border}33`,
+                    boxShadow: `0 8px 0 #000000, 0 10px 20px rgba(0,0,0,0.5)`,
                   }}
                 >
-                  {/* Rarity ribbon triangle in top-right corner */}
+                  {/* Inner colored border */}
+                  <div
+                    className="absolute inset-[3px] rounded-lg"
+                    style={{ border: `2px solid ${colors.border}`, pointerEvents: "none", zIndex: 15 }}
+                  />
+
+                  {/* Rarity ribbon triangle */}
                   <div
                     className="absolute right-0 top-0 z-20"
                     style={{
@@ -101,40 +98,45 @@ export default function Characters() {
                     }}
                   />
 
-                  {/* Inner subtle pattern overlay */}
+                  {/* Shine overlay */}
                   <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0 z-10 opacity-15"
                     style={{
-                      backgroundImage: "radial-gradient(circle at 50% 30%, rgba(255,255,255,0.3), transparent 60%)",
+                      backgroundImage: "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6), transparent 50%)",
                     }}
                   />
 
-                  {/* Character image area */}
-                  <div className="relative flex flex-1 items-center justify-center px-2 pt-4">
+                  {/* Character image */}
+                  <div className="relative z-5 flex flex-1 items-center justify-center px-2 pt-4">
                     <div className="relative h-[150px] w-[130px]">
                       <Image
                         src={`/characters/${c.img}.png`}
                         alt={c.name}
                         fill
                         className="object-contain"
-                        style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}
+                        style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.6))" }}
                       />
                     </div>
                   </div>
 
-                  {/* Name banner - green 3D button style */}
-                  <div className="relative z-10 px-2 pb-1">
+                  {/* Name banner — green 3D button */}
+                  <div className="relative z-20 px-2 pb-1">
                     <div
                       className="w-full rounded-lg py-1.5 text-center"
                       style={{
-                        background: "linear-gradient(180deg, #51D502, #3aab00)",
-                        borderBottom: "3px solid #2d8400",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                        background: "linear-gradient(180deg, #7BF03A, #51D502, #3aab00)",
+                        border: "2px solid #000000",
+                        boxShadow: "0 4px 0 #000000, 0 5px 8px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.3)",
                       }}
                     >
                       <span
-                        className="font-game text-sm text-white"
-                        style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
+                        className="font-game text-sm"
+                        style={{
+                          color: "#ffffff",
+                          WebkitTextStroke: "1px #000000",
+                          paintOrder: "stroke fill",
+                          textShadow: "0 2px 0 #000000",
+                        }}
                       >
                         {c.name}
                       </span>
@@ -142,12 +144,14 @@ export default function Characters() {
                   </div>
 
                   {/* Rarity text */}
-                  <div className="relative z-10 pb-2.5 pt-1 text-center">
+                  <div className="relative z-20 pb-2 pt-1 text-center">
                     <span
-                      className="text-[11px] font-bold"
+                      className="font-game text-[11px]"
                       style={{
                         color: colors.border,
-                        textShadow: `0 0 8px ${colors.border}66`,
+                        WebkitTextStroke: "0.5px #000000",
+                        paintOrder: "stroke fill",
+                        textShadow: `0 1px 0 #000000, 0 0 8px ${colors.border}66`,
                       }}
                     >
                       {c.rarity}

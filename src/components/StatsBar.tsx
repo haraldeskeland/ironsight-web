@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 24, label: "Weapons", accent: "#FE4546" },
-  { value: 37, label: "Towers", accent: "#017BCC" },
-  { value: 33, label: "Characters", accent: "#FFDC2F" },
-  { value: 95, label: "Levels", accent: "#51D502" },
+  { value: 24, label: "Weapons", accent: "#FE4546", shadow: "#7a0000" },
+  { value: 37, label: "Towers", accent: "#017BCC", shadow: "#003d66" },
+  { value: 33, label: "Characters", accent: "#ab47bc", shadow: "#4a1a5e" },
+  { value: 95, label: "Levels", accent: "#51D502", shadow: "#1a4a00" },
 ];
 
 function AnimatedCounter({ target, active }: { target: number; active: boolean }) {
@@ -54,26 +54,28 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={ref} className="mx-auto max-w-6xl px-6 py-6">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {stats.map((stat, i) => (
+    <section ref={ref} className="bg-white py-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 md:grid-cols-4">
+        {stats.map((stat) => (
           <div
             key={stat.label}
-            className="game-panel p-5 text-center"
-            style={{ animationDelay: `${i * 100}ms` }}
+            className="rounded-2xl border-3 border-black bg-white p-6 text-center"
+            style={{
+              boxShadow: `0 6px 0 ${stat.shadow}, 0 8px 16px rgba(0,0,0,0.15)`,
+            }}
           >
             <div
-              className="font-game text-4xl"
+              className="font-game text-5xl"
               style={{
                 color: stat.accent,
-                WebkitTextStroke: "1.5px #1a1a1a",
+                WebkitTextStroke: "2px #000000",
                 paintOrder: "stroke fill",
-                textShadow: "0 2px 0 #1a1a1a, 0 3px 8px rgba(0,0,0,0.3)",
+                textShadow: "0 3px 0 #000000",
               }}
             >
               <AnimatedCounter target={stat.value} active={active} />
             </div>
-            <div className="mt-1 font-game text-sm text-white/70">{stat.label}</div>
+            <div className="mt-1 font-game text-base text-gray-800">{stat.label}</div>
           </div>
         ))}
       </div>
