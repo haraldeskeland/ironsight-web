@@ -100,13 +100,14 @@ body {
   .btn-primary::after {
     position: absolute;
     content: "";
-    top: 4px;
-    right: 6px;
-    left: 6px;
-    height: 46%;
-    border-radius: 7px;
-    background: rgba(255,255,255,0.18);
+    top: 3px;
+    right: 4px;
+    left: 4px;
+    height: 48%;
+    border-radius: 9px 9px 4px 4px;
+    background: rgba(255,255,255,0.22);
     z-index: 1;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .btn-primary > * {
     position: relative;
@@ -165,13 +166,14 @@ body {
   .btn-secondary::after {
     position: absolute;
     content: "";
-    top: 4px;
-    right: 6px;
-    left: 6px;
-    height: 46%;
-    border-radius: 7px;
-    background: rgba(255,255,255,0.15);
+    top: 3px;
+    right: 4px;
+    left: 4px;
+    height: 48%;
+    border-radius: 9px 9px 4px 4px;
+    background: rgba(255,255,255,0.18);
     z-index: 1;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .btn-secondary > * {
     position: relative;

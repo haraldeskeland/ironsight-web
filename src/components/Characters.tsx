@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const rarityColors: Record<string, { border: string; dark: string; ribbon: string }> = {
-  Common:    { border: "#b8b8b8", dark: "#8a8a8a", ribbon: "#9e9e9e" },
-  Rare:      { border: "#4fc3f7", dark: "#0288d1", ribbon: "#039be5" },
-  Epic:      { border: "#ab47bc", dark: "#7b1fa2", ribbon: "#8e24aa" },
-  Legendary: { border: "#ffab00", dark: "#c67c00", ribbon: "#ff8f00" },
-  Mythic:    { border: "#FE4546", dark: "#b71c1c", ribbon: "#d32f2f" },
+const rarityColors: Record<string, { bg: string; border: string }> = {
+  Common:    { bg: "#6a6a6a", border: "#b8b8b8" },
+  Rare:      { bg: "#0277bd", border: "#4fc3f7" },
+  Epic:      { bg: "#6a1b9a", border: "#ab47bc" },
+  Legendary: { bg: "#e65100", border: "#ffab00" },
+  Mythic:    { bg: "#b71c1c", border: "#FE4546" },
 };
 
 const characters = [
@@ -34,9 +34,9 @@ export default function Characters() {
           const cards = el.querySelectorAll("[data-char-card]");
           cards.forEach((card, i) => {
             const htmlCard = card as HTMLElement;
-            htmlCard.style.animationDelay = `${i * 100}ms`;
+            htmlCard.style.animationDelay = `${i * 80}ms`;
             htmlCard.classList.remove("reveal-hidden");
-            htmlCard.classList.add("animate-slide-right");
+            htmlCard.classList.add("animate-scale-up");
           });
           observer.unobserve(el);
         }
@@ -59,103 +59,60 @@ export default function Characters() {
         <h2 className="game-text text-center font-game text-4xl">
           COLLECT & LEVEL 33 CHARACTERS
         </h2>
-        <p className="mt-2 text-center text-white/70">
+        <p className="mt-3 text-center text-white/70">
           Five rarity tiers from Common to Mythic
         </p>
 
-        <div ref={ref} className="scroll-hide mt-10 flex justify-center gap-5 overflow-x-auto pb-4">
+        <div ref={ref} className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4">
           {characters.map((c) => {
             const colors = rarityColors[c.rarity];
             return (
               <div
                 key={c.name}
                 data-char-card
-                className="reveal-hidden group relative flex flex-col items-center transition-transform duration-200 hover:-translate-y-2"
-                style={{ width: 180, height: 260 }}
+                className="reveal-hidden game-panel flex flex-col items-center p-4 transition-transform duration-200 hover:-translate-y-2"
               >
+                {/* Character image */}
+                <div className="relative h-[140px] w-[120px]">
+                  <Image
+                    src={`/characters/${c.img}.png`}
+                    alt={c.name}
+                    fill
+                    className="object-contain"
+                    style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}
+                  />
+                </div>
+
+                {/* Name banner */}
                 <div
-                  className="relative flex h-full w-full flex-col overflow-hidden rounded-xl"
+                  className="relative mt-3 w-full overflow-hidden rounded-lg py-2 text-center"
                   style={{
-                    border: "4px solid #000000",
-                    background: "linear-gradient(135deg, #5bc0ff 0%, #0288d1 50%, #01579b 100%)",
-                    boxShadow: `0 8px 0 #000000, 0 10px 20px rgba(0,0,0,0.5)`,
+                    background: "linear-gradient(180deg, #8ed44a 0%, #7fc427 48%, #58a221 52%, #4a8d1a 100%)",
+                    border: "1px solid #000",
+                    boxShadow: "0 0 0 1px #000, 0 3px 0 1px rgba(0,0,0,0.25)",
                   }}
                 >
-                  {/* Inner colored border */}
-                  <div
-                    className="absolute inset-[3px] rounded-lg"
-                    style={{ border: `2px solid ${colors.border}`, pointerEvents: "none", zIndex: 15 }}
-                  />
-
-                  {/* Rarity ribbon triangle */}
-                  <div
-                    className="absolute right-0 top-0 z-20"
+                  <div className="absolute inset-[2px] rounded-md" style={{ background: "linear-gradient(180deg, #7fc427, #58a221)" }} />
+                  <div className="absolute top-[2px] right-[3px] left-[3px] h-[45%] rounded-md" style={{ background: "rgba(255,255,255,0.15)" }} />
+                  <span
+                    className="relative z-10 font-game text-sm text-white"
                     style={{
-                      width: 0,
-                      height: 0,
-                      borderLeft: "40px solid transparent",
-                      borderTop: `40px solid ${colors.ribbon}`,
+                      WebkitTextStroke: "1px #000",
+                      paintOrder: "stroke fill",
+                      textShadow: "0 2px 0 #000",
                     }}
-                  />
-
-                  {/* Shine overlay */}
-                  <div
-                    className="absolute inset-0 z-10 opacity-15"
-                    style={{
-                      backgroundImage: "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6), transparent 50%)",
-                    }}
-                  />
-
-                  {/* Character image */}
-                  <div className="relative z-5 flex flex-1 items-center justify-center px-2 pt-4">
-                    <div className="relative h-[150px] w-[130px]">
-                      <Image
-                        src={`/characters/${c.img}.png`}
-                        alt={c.name}
-                        fill
-                        className="object-contain"
-                        style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.6))" }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Name banner — green 3D button */}
-                  <div className="relative z-20 px-2 pb-1">
-                    <div
-                      className="relative w-full overflow-hidden rounded-lg py-1.5 text-center"
-                      style={{
-                        background: "linear-gradient(180deg, #d3ebb7 0%, #85c03f 40%, #366c1b 100%)",
-                        border: "1px solid #000",
-                        boxShadow: "0 0 0 1px #000, 0 3px 0 1px rgba(0,0,0,0.25)",
-                      }}
-                    >
-                      {/* Inner gradient */}
-                      <div className="absolute inset-[2px] rounded-md" style={{ background: "linear-gradient(180deg, #7fc427, #58a221)", boxShadow: "inset 0 0 2px 1px rgba(255,255,255,0.2)" }} />
-                      {/* Shine */}
-                      <div className="absolute top-[3px] right-[3px] left-[3px] h-[45%] rounded-md" style={{ background: "linear-gradient(180deg, #d0e878, rgba(152,208,64,0))" }} />
-                      <span
-                        className="coc-text relative z-10 font-game text-sm text-white"
-                      >
-                        {c.name}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Rarity text */}
-                  <div className="relative z-20 pb-2 pt-1 text-center">
-                    <span
-                      className="font-game text-[11px]"
-                      style={{
-                        color: colors.border,
-                        WebkitTextStroke: "0.5px #000000",
-                        paintOrder: "stroke fill",
-                        textShadow: `0 1px 0 #000000, 0 0 8px ${colors.border}66`,
-                      }}
-                    >
-                      {c.rarity}
-                    </span>
-                  </div>
+                  >
+                    {c.name}
+                  </span>
                 </div>
+
+                {/* Rarity */}
+                <span
+                  className="mt-2 font-game text-xs"
+                  style={{ color: colors.border }}
+                >
+                  {c.rarity}
+                </span>
               </div>
             );
           })}
