@@ -28,11 +28,11 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/loading-2.jpg')", filter: "brightness(1.15) contrast(1.1)" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[50vh] max-w-6xl items-center px-6">
-        <div className="max-w-lg">
+      <div className="relative mx-auto flex min-h-[50vh] max-w-6xl items-center justify-center px-6">
+        <div className="max-w-lg text-center">
           <p
             data-hero-sub
             className="reveal-hidden font-game text-base text-white"
@@ -50,11 +50,11 @@ export default function Hero() {
           >
             Ironsight
           </h1>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
+          <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-white/80">
             Defend your base. Arm your towers. Unleash hell. Run, gun, and build
             defenses in real time as waves of enemies storm from every direction.
           </p>
-          <div data-hero-cta className="reveal-hidden mt-6 flex flex-wrap gap-4">
+          <div data-hero-cta className="reveal-hidden mt-6 flex flex-wrap justify-center gap-4">
             <a href="#" className="btn-primary">
               <span>Download Free</span>
             </a>
