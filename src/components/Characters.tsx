@@ -73,7 +73,7 @@ export default function Characters() {
                 className="reveal-hidden game-panel flex flex-col items-center p-4 transition-transform duration-200 hover:-translate-y-2"
               >
                 {/* Character image */}
-                <div className="relative h-[140px] w-[120px]">
+                <div className="relative h-[140px] w-[120px] rounded-lg" style={{ background: "#0E223D" }}>
                   <Image
                     src={`/characters/${c.img}.png`}
                     alt={c.name}
