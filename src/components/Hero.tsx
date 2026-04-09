@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Hero background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/wave.png')" }}
+        style={{ backgroundImage: "url('/loading-1.jpg')" }}
       />
       {/* Dark gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#034a7e]/95 via-[#045D9E]/70 to-transparent" />

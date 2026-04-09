@@ -16,9 +16,9 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Ironsight"
-            width={48}
-            height={48}
-            className="rounded-lg"
+            width={72}
+            height={72}
+            className="rounded-xl"
           />
         </Link>
         <div className="hidden items-center gap-2 md:flex">
