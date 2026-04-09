@@ -6,7 +6,7 @@ export default function DownloadCTA() {
         <p className="mt-3 text-white/60">Download Ironsight free on the App Store</p>
         <div className="mt-8">
           <a href="#" className="btn-primary px-14 py-5 text-2xl">
-            Download Now
+            <span>Download Now</span>
           </a>
         </div>
       </div>

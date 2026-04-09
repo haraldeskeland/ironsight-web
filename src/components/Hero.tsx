@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import StatsBar from "./StatsBar";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -26,34 +27,25 @@ export default function Hero() {
     <section ref={sectionRef} className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/loading-1.jpg')" }}
+        style={{ backgroundImage: "url('/loading-2.jpg')" }}
       />
-      {/* Left side overlay for text readability — right side stays vivid */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#034a7e]/90 via-[#045D9E]/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E]/80 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#034a7e]/90 via-[#045D9E]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E]/90 via-transparent to-transparent" />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
+      <div className="relative mx-auto max-w-6xl px-6 pt-20 md:pt-28">
         <div className="max-w-xl">
           <p
             data-hero-sub
-            className="reveal-hidden font-game text-xl"
-            style={{
-              color: "#FFDC2F",
-              WebkitTextStroke: "1.5px #000000",
-              paintOrder: "stroke fill",
-              textShadow: "0 3px 0 #000000",
-            }}
+            className="reveal-hidden coc-text font-game text-xl text-[#FFDC2F]"
           >
             Tower Defense Action Shooter
           </p>
           <h1
             data-hero-title
-            className="reveal-hidden mt-3 font-game text-7xl leading-none md:text-9xl"
+            className="reveal-hidden mt-3 font-game text-5xl leading-none md:text-7xl"
             style={{
               color: "#ffffff",
-              WebkitTextStroke: "4px #000000",
-              paintOrder: "stroke fill",
-              textShadow: "0 6px 0 #000000",
+              textShadow: "0 -3px #000, 0 0 #000, 0 3px #000, 0 6px #000, -2px -2px #000, 2px -2px #000, 2px 0 #000, -2px 0 #000, 2px 2px #000, -2px 2px #000, 2px 3px #000, -2px 3px #000, 2px 4px #000, -2px 4px #000",
             }}
           >
             IRONSIGHT
@@ -64,13 +56,18 @@ export default function Hero() {
           </p>
           <div data-hero-cta className="reveal-hidden mt-8 flex flex-wrap gap-4">
             <a href="#" className="btn-primary">
-              Download Free
+              <span>Download Free</span>
             </a>
             <a href="#features" className="btn-outline">
-              Learn More
+              <span>Learn More</span>
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Stats inside hero */}
+      <div className="relative">
+        <StatsBar />
       </div>
     </section>
   );

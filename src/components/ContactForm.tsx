@@ -91,7 +91,7 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="btn-primary w-full disabled:opacity-50"
       >
-        {status === "sending" ? "Sending..." : "Send Message"}
+        <span>{status === "sending" ? "Sending..." : "Send Message"}</span>
       </button>
       {status === "error" && (
         <p className="text-center text-sm text-accent-red">Something went wrong. Please try again.</p>

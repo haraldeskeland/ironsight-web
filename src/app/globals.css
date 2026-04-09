@@ -95,26 +95,27 @@ body {
   .btn-primary::before {
     position: absolute;
     content: "";
-    inset: 2px;
-    border-radius: 10px;
-    background: linear-gradient(180deg, #ffe44a 0%, #f5b800 100%);
-    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.25);
+    inset: 3px;
+    border-radius: 9px;
+    background: linear-gradient(180deg, #ffe44a 0%, #f5b800 50%, #e8a000 100%);
+    box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.3);
     z-index: 0;
   }
   .btn-primary::after {
     position: absolute;
     content: "";
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    height: 45%;
+    top: 4px;
+    right: 6px;
+    left: 6px;
+    height: 50%;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,200,0.6) 0%, rgba(255,220,47,0.0) 100%);
-    z-index: 0;
-  }
-  .btn-primary span, .btn-primary {
-    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,230,0.7) 0%, rgba(255,255,200,0.3) 40%, rgba(255,220,47,0.0) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
     z-index: 1;
+  }
+  .btn-primary > * {
+    position: relative;
+    z-index: 2;
   }
   .btn-primary:hover {
     transform: translateY(-2px);
@@ -163,26 +164,27 @@ body {
   .btn-secondary::before {
     position: absolute;
     content: "";
-    inset: 2px;
-    border-radius: 10px;
+    inset: 3px;
+    border-radius: 9px;
     background: linear-gradient(180deg, #7fc427, #58a221);
-    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.23);
+    box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.25);
     z-index: 0;
   }
   .btn-secondary::after {
     position: absolute;
     content: "";
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    height: 45%;
+    top: 4px;
+    right: 6px;
+    left: 6px;
+    height: 50%;
     border-radius: 8px;
-    background: linear-gradient(180deg, #d0e878 0%, rgba(152,208,64,0.0) 100%);
-    z-index: 0;
-  }
-  .btn-secondary span, .btn-secondary {
-    position: relative;
+    background: linear-gradient(180deg, rgba(220,240,140,0.7) 0%, rgba(180,230,80,0.3) 40%, rgba(152,208,64,0.0) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     z-index: 1;
+  }
+  .btn-secondary > * {
+    position: relative;
+    z-index: 2;
   }
   .btn-secondary:hover {
     transform: translateY(-2px);
@@ -231,26 +233,27 @@ body {
   .btn-outline::before {
     position: absolute;
     content: "";
-    inset: 2px;
-    border-radius: 10px;
+    inset: 3px;
+    border-radius: 9px;
     background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
-    box-shadow: inset 0 0 3px 1px rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.1);
     z-index: 0;
   }
   .btn-outline::after {
     position: absolute;
     content: "";
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    height: 45%;
+    top: 4px;
+    right: 6px;
+    left: 6px;
+    height: 50%;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.0) 100%);
-    z-index: 0;
-  }
-  .btn-outline span, .btn-outline {
-    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.0) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     z-index: 1;
+  }
+  .btn-outline > * {
+    position: relative;
+    z-index: 2;
   }
   .btn-outline:hover {
     transform: translateY(-2px);
