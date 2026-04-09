@@ -48,7 +48,7 @@ export default function Characters() {
   }, []);
 
   return (
-    <section id="characters" className="relative py-16">
+    <section id="characters" className="relative py-24">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/sprites/Background_04.png')" }}

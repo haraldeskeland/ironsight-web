@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import StatsBar from "./StatsBar";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,16 +23,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-[85vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/loading-2.jpg')" }}
       />
-      {/* Black overlay — not blue */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-20 md:pt-28">
+      <div className="relative mx-auto flex min-h-[85vh] max-w-6xl items-center px-6">
         <div className="max-w-xl">
           <p
             data-hero-sub
@@ -65,10 +63,6 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="relative">
-        <StatsBar />
       </div>
     </section>
   );

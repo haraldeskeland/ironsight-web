@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -9,8 +12,26 @@ const links = [
 ];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 border-b-4 border-[#022d55] bg-[#034a7e] shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
+    <nav
+      className="fixed top-0 z-50 w-full transition-all duration-300"
+      style={{
+        background: scrolled ? "rgba(3,74,126,0.95)" : "transparent",
+        borderBottom: scrolled ? "4px solid #022d55" : "none",
+        boxShadow: scrolled ? "0 4px 12px rgba(0,0,0,0.3)" : "none",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+      }}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
         <Link href="/" className="flex items-center">
           <Image

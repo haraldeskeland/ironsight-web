@@ -38,7 +38,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="bg-white py-16">
+    <section id="features" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="game-text-dark text-center font-game text-4xl">
           BUILT FOR BATTLE

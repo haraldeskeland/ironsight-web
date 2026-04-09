@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 24, label: "Weapons", accent: "#FE4546" },
-  { value: 37, label: "Towers", accent: "#017BCC" },
-  { value: 33, label: "Characters", accent: "#ab47bc" },
-  { value: 95, label: "Levels", accent: "#51D502" },
+  { value: 24, label: "Weapons" },
+  { value: 37, label: "Towers" },
+  { value: 33, label: "Characters" },
+  { value: 95, label: "Levels" },
 ];
 
 function AnimatedCounter({ target, active }: { target: number; active: boolean }) {
@@ -54,17 +54,16 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={ref} className="py-8">
+    <section ref={ref} className="py-14">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 md:grid-cols-4">
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="game-panel p-6 text-center"
+            className="game-panel p-7 text-center"
           >
             <div
-              className="font-game text-5xl"
+              className="font-game text-5xl text-white"
               style={{
-                color: stat.accent,
                 WebkitTextStroke: "2px #000",
                 paintOrder: "stroke fill",
                 textShadow: "0 3px 0 #000",

@@ -8,7 +8,7 @@ const screenshots = [
 
 export default function Screenshots() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="game-text-dark text-center font-game text-4xl">SEE IT IN ACTION</h2>
         <p className="mt-2 text-center text-gray-500">Gameplay screenshots</p>
