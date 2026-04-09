@@ -18,11 +18,11 @@ export default function Screenshots() {
           <h2 className="game-text-dark text-center font-game text-4xl">SEE IT IN ACTION</h2>
           <p className="mt-2 text-center text-gray-500">Real gameplay screenshots</p>
         </ScrollReveal>
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {screenshots.map((s) => (
             <ScrollReveal key={s.label}>
               <div
-                className="group relative overflow-hidden rounded-2xl"
+                className="group relative aspect-video overflow-hidden rounded-2xl"
                 style={{
                   border: "3px solid #000",
                   boxShadow: "0 0 0 1px #000, 0 6px 0 2px rgba(0,0,0,0.2)",
@@ -31,9 +31,8 @@ export default function Screenshots() {
                 <Image
                   src={s.img}
                   alt={s.label}
-                  width={1400}
-                  height={645}
-                  className="w-full transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <span
