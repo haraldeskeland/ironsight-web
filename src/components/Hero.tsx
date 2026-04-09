@@ -23,15 +23,17 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[50vh] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-[65vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/loading-2.jpg')", filter: "brightness(1.15) contrast(1.1)" }}
+        style={{ backgroundImage: "url('/loading-2.jpg')", filter: "brightness(0.95) contrast(0.95)" }}
       />
-      <div className="absolute inset-0 bg-black/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+      {/* Strong vignette — all edges */}
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
 
-      <div className="relative mx-auto flex min-h-[50vh] max-w-6xl items-center justify-center px-6">
+      <div className="relative mx-auto flex min-h-[65vh] max-w-6xl items-center justify-center px-6">
         <div className="max-w-lg text-center">
           <p
             data-hero-sub

@@ -42,9 +42,9 @@ body {
   /* Hard drop shadow text — single solid offset, no blur */
   .game-text {
     color: #ffffff;
-    -webkit-text-stroke: 2.5px #000000;
+    -webkit-text-stroke: 3px #000000;
     paint-order: stroke fill;
-    text-shadow: 0 4px 0 #000000;
+    text-shadow: 0 5px 0 #000000, 0 6px 0 rgba(0,0,0,0.6);
   }
   .game-text-dark {
     color: #1a1a1a;
