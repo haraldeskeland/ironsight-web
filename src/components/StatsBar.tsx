@@ -54,7 +54,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={ref} className="py-14">
+    <section ref={ref} className="bg-white py-14">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 md:grid-cols-4">
         {stats.map((stat) => (
           <div

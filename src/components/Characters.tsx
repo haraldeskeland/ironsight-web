@@ -73,18 +73,18 @@ export default function Characters() {
                 className="reveal-hidden flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
               >
                 {/* Glow behind character — bigger, more intense */}
-                <div className="relative flex items-center justify-center" style={{ width: 180, height: 220 }}>
+                <div className="relative flex items-center justify-center" style={{ width: "100%", height: 220 }}>
                   <div
                     className="absolute"
                     style={{
-                      width: 200,
-                      height: 200,
+                      width: 220,
+                      height: 220,
                       borderRadius: "50%",
-                      background: `radial-gradient(circle, ${r.color}55 0%, ${r.color}25 35%, ${r.color}08 60%, transparent 80%)`,
-                      filter: "blur(12px)",
+                      background: `radial-gradient(circle, ${r.color}60 0%, ${r.color}30 30%, ${r.color}10 55%, transparent 75%)`,
+                      filter: "blur(16px)",
                     }}
                   />
-                  <div className="relative h-[220px] w-[180px]">
+                  <div className="relative h-[220px] w-full px-2">
                     <Image
                       src={`/characters/${c.img}.png`}
                       alt={c.name}

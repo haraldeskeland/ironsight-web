@@ -58,7 +58,7 @@ export default function Features() {
                 <Image src={f.icon} alt={f.title} width={40} height={40} />
               </div>
               <h3
-                className="font-game text-lg text-white"
+                className="font-game text-2xl text-white"
                 style={{
                   WebkitTextStroke: "1px #000",
                   paintOrder: "stroke fill",
@@ -67,7 +67,7 @@ export default function Features() {
               >
                 {f.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <p className="mt-1.5 text-xs leading-snug text-white/60">
                 {f.desc}
               </p>
             </div>
