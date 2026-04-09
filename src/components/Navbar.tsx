@@ -11,13 +11,13 @@ const links = [
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Ironsight"
-            width={72}
-            height={72}
+            width={96}
+            height={96}
             className="rounded-xl"
           />
         </Link>

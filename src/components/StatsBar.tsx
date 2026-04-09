@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 24, label: "Weapons", color: "text-accent-red" },
-  { value: 37, label: "Towers", color: "text-accent-blue" },
-  { value: 33, label: "Characters", color: "text-accent-gold" },
-  { value: 95, label: "Levels", color: "text-accent-green" },
+  { value: 24, label: "Weapons", color: "text-accent-red", accent: "#FE4546" },
+  { value: 37, label: "Towers", color: "text-accent-blue", accent: "#017BCC" },
+  { value: 33, label: "Characters", color: "text-accent-gold", accent: "#FFDC2F" },
+  { value: 95, label: "Levels", color: "text-accent-green", accent: "#51D502" },
 ];
 
 function AnimatedCounter({ target, active }: { target: number; active: boolean }) {
@@ -60,16 +60,21 @@ export default function StatsBar() {
           <div
             key={stat.label}
             data-stagger-item
-            className="rounded-2xl border border-white/10 bg-card p-5 text-center"
+            className="overflow-hidden rounded-xl text-center"
             style={{
-              borderBottom: "4px solid rgba(0,0,0,0.2)",
+              border: "2px solid rgba(255,255,255,0.12)",
+              borderBottom: `5px solid ${stat.accent}`,
+              background: "linear-gradient(180deg, #03498a, #034070)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
               animationDelay: `${i * 100}ms`,
             }}
           >
-            <div className={`font-game text-4xl ${stat.color}`}>
-              <AnimatedCounter target={stat.value} active={active} />
+            <div className="p-5">
+              <div className={`font-game text-4xl ${stat.color}`}>
+                <AnimatedCounter target={stat.value} active={active} />
+              </div>
+              <div className="mt-1 text-sm text-text-secondary">{stat.label}</div>
             </div>
-            <div className="mt-1 text-sm text-text-secondary">{stat.label}</div>
           </div>
         ))}
       </div>
