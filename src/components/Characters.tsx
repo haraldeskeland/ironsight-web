@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const rarityColors: Record<string, { bg: string; border: string }> = {
-  Common:    { bg: "#6a6a6a", border: "#b8b8b8" },
-  Rare:      { bg: "#0277bd", border: "#4fc3f7" },
-  Epic:      { bg: "#6a1b9a", border: "#ab47bc" },
-  Legendary: { bg: "#e65100", border: "#ffab00" },
-  Mythic:    { bg: "#b71c1c", border: "#FE4546" },
+const rarityColors: Record<string, { color: string; dark: string; label: string }> = {
+  Common:    { color: "#b8b8b8", dark: "#6a6a6a", label: "Common" },
+  Rare:      { color: "#4fc3f7", dark: "#0277bd", label: "Rare" },
+  Epic:      { color: "#ab47bc", dark: "#6a1b9a", label: "Epic" },
+  Legendary: { color: "#ffab00", dark: "#c67c00", label: "Legendary" },
+  Mythic:    { color: "#FE4546", dark: "#b71c1c", label: "Mythic" },
 };
 
 const characters = [
@@ -63,56 +63,75 @@ export default function Characters() {
           Five rarity tiers from Common to Mythic
         </p>
 
-        <div ref={ref} className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4">
+        <div ref={ref} className="mt-12 grid grid-cols-2 gap-x-2 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
           {characters.map((c) => {
-            const colors = rarityColors[c.rarity];
+            const r = rarityColors[c.rarity];
             return (
               <div
                 key={c.name}
                 data-char-card
-                className="reveal-hidden game-panel flex flex-col items-center p-4 transition-transform duration-200 hover:-translate-y-2"
+                className="reveal-hidden flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
               >
-                {/* Character image */}
-                <div className="relative h-[140px] w-[120px] rounded-lg" style={{ background: "#0E223D" }}>
-                  <Image
-                    src={`/characters/${c.img}.png`}
-                    alt={c.name}
-                    fill
-                    className="object-contain"
-                    style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}
+                {/* Glow behind character */}
+                <div className="relative">
+                  <div
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    style={{
+                      width: 160,
+                      height: 160,
+                      borderRadius: "50%",
+                      background: `radial-gradient(circle, ${r.color}40 0%, ${r.color}15 40%, transparent 70%)`,
+                      filter: "blur(8px)",
+                    }}
                   />
+                  <div className="relative h-[200px] w-[150px]">
+                    <Image
+                      src={`/characters/${c.img}.png`}
+                      alt={c.name}
+                      fill
+                      className="object-contain"
+                      style={{ filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.6))" }}
+                    />
+                  </div>
                 </div>
 
-                {/* Name banner */}
-                <div
-                  className="relative mt-3 w-full overflow-hidden rounded-lg py-2 text-center"
+                {/* Name */}
+                <h3
+                  className="mt-2 font-game text-xl text-white"
                   style={{
-                    background: "linear-gradient(180deg, #8ed44a 0%, #7fc427 48%, #58a221 52%, #4a8d1a 100%)",
-                    border: "1px solid #000",
-                    boxShadow: "0 0 0 1px #000, 0 3px 0 1px rgba(0,0,0,0.25)",
+                    WebkitTextStroke: "1.5px #000",
+                    paintOrder: "stroke fill",
+                    textShadow: "0 3px 0 #000",
                   }}
                 >
-                  <div className="absolute inset-[2px] rounded-md" style={{ background: "linear-gradient(180deg, #7fc427, #58a221)" }} />
-                  <div className="absolute top-[2px] right-[3px] left-[3px] h-[45%] rounded-md" style={{ background: "rgba(255,255,255,0.15)" }} />
+                  {c.name}
+                </h3>
+
+                {/* Rarity pill — 3D style */}
+                <div
+                  className="relative mt-2 overflow-hidden rounded-full px-5 py-1"
+                  style={{
+                    background: `linear-gradient(180deg, ${r.color} 0%, ${r.color} 48%, ${r.dark} 52%, ${r.dark} 100%)`,
+                    border: "1px solid #000",
+                    boxShadow: `0 0 0 1px #000, 0 3px 0 1px rgba(0,0,0,0.3), 0 0 12px ${r.color}40`,
+                  }}
+                >
+                  {/* Shine on top half */}
+                  <div
+                    className="absolute top-0 right-0 left-0 h-[48%]"
+                    style={{ background: "rgba(255,255,255,0.2)", borderRadius: "999px 999px 2px 2px" }}
+                  />
                   <span
-                    className="relative z-10 font-game text-sm text-white"
+                    className="relative z-10 font-game text-xs text-white"
                     style={{
-                      WebkitTextStroke: "1px #000",
+                      WebkitTextStroke: "0.5px #000",
                       paintOrder: "stroke fill",
-                      textShadow: "0 2px 0 #000",
+                      textShadow: "0 1px 0 #000",
                     }}
                   >
-                    {c.name}
+                    {c.rarity}
                   </span>
                 </div>
-
-                {/* Rarity */}
-                <span
-                  className="mt-2 font-game text-xs"
-                  style={{ color: colors.border }}
-                >
-                  {c.rarity}
-                </span>
               </div>
             );
           })}
