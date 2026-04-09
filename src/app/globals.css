@@ -70,18 +70,14 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 12px;
-    padding: 18px 40px;
+    padding: 16px 36px;
     font-family: var(--font-lilita);
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.2em;
     color: #ffffff;
-    text-shadow:
-      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
-      -1px -1px #000, 1px -1px #000,
-      1px 0 #000, -1px 0 #000,
-      1px 1px #000, -1px 1px #000,
-      1px 2px #000, -1px 2px #000;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 2px 0 #000, 0 3px 4px rgba(0,0,0,0.3);
     background: linear-gradient(180deg, #fff3a0 0%, #FFDC2F 20%, #FEB72F 60%, #d48800 100%);
     border: 1px solid #000;
     box-shadow:
@@ -107,10 +103,9 @@ body {
     top: 4px;
     right: 6px;
     left: 6px;
-    height: 50%;
+    height: 45%;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,230,0.7) 0%, rgba(255,255,200,0.3) 40%, rgba(255,220,47,0.0) 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.25);
+    background: linear-gradient(180deg, rgba(255,255,230,0.55) 0%, rgba(255,245,180,0.2) 60%, transparent 100%);
     z-index: 1;
   }
   .btn-primary > * {
@@ -139,18 +134,14 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 12px;
-    padding: 18px 40px;
+    padding: 16px 36px;
     font-family: var(--font-lilita);
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.2em;
     color: #ffffff;
-    text-shadow:
-      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
-      -1px -1px #000, 1px -1px #000,
-      1px 0 #000, -1px 0 #000,
-      1px 1px #000, -1px 1px #000,
-      1px 2px #000, -1px 2px #000;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 2px 0 #000, 0 3px 4px rgba(0,0,0,0.3);
     background: linear-gradient(180deg, #d3ebb7 0%, #85c03f 40%, #366c1b 100%);
     border: 1px solid #000;
     box-shadow:
@@ -176,10 +167,9 @@ body {
     top: 4px;
     right: 6px;
     left: 6px;
-    height: 50%;
+    height: 45%;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(220,240,140,0.7) 0%, rgba(180,230,80,0.3) 40%, rgba(152,208,64,0.0) 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: linear-gradient(180deg, rgba(220,240,140,0.55) 0%, rgba(180,230,80,0.2) 60%, transparent 100%);
     z-index: 1;
   }
   .btn-secondary > * {
@@ -208,18 +198,14 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 12px;
-    padding: 18px 40px;
+    padding: 16px 36px;
     font-family: var(--font-lilita);
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.2em;
     color: #ffffff;
-    text-shadow:
-      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
-      -1px -1px #000, 1px -1px #000,
-      1px 0 #000, -1px 0 #000,
-      1px 1px #000, -1px 1px #000,
-      1px 2px #000, -1px 2px #000;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 2px 0 #000, 0 3px 4px rgba(0,0,0,0.3);
     background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
     border: 1px solid #000;
     box-shadow:
@@ -245,10 +231,9 @@ body {
     top: 4px;
     right: 6px;
     left: 6px;
-    height: 50%;
+    height: 45%;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.0) 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 60%, transparent 100%);
     z-index: 1;
   }
   .btn-outline > * {
