@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[85vh] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-[70vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/loading-2.jpg')" }}
@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[85vh] max-w-6xl items-center px-6">
+      <div className="relative mx-auto flex min-h-[70vh] max-w-6xl items-center px-6">
         <div className="max-w-xl">
           <p
             data-hero-sub
