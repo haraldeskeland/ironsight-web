@@ -52,24 +52,21 @@ export default function Features() {
             <div
               key={f.title}
               data-feature-card
-              className="reveal-hidden overflow-hidden rounded-2xl bg-white transition-transform duration-200 hover:-translate-y-1"
-              style={{
-                border: "3px solid #000",
-                boxShadow: `0 0 0 1px #000, 0 6px 0 1px ${f.shadow}, 0 8px 16px rgba(0,0,0,0.15)`,
-              }}
+              className="reveal-hidden game-panel overflow-hidden transition-transform duration-200 hover:-translate-y-1"
             >
               <div
                 className="flex items-center justify-center py-5"
                 style={{
-                  background: `linear-gradient(135deg, ${f.accent}20, ${f.accent}08)`,
-                  borderBottom: "2px solid rgba(0,0,0,0.08)",
+                  background: `linear-gradient(135deg, ${f.accent}25, ${f.accent}08)`,
+                  borderBottom: "2px solid rgba(0,0,0,0.2)",
                 }}
               >
                 <div
                   className="flex h-16 w-16 items-center justify-center rounded-xl"
                   style={{
-                    background: `${f.accent}15`,
-                    border: `2px solid ${f.accent}40`,
+                    background: "rgba(0,0,0,0.2)",
+                    border: `2px solid ${f.accent}55`,
+                    boxShadow: `0 0 10px ${f.accent}30`,
                   }}
                 >
                   <Image src={f.icon} alt={f.title} width={36} height={36} />
@@ -78,11 +75,16 @@ export default function Features() {
               <div className="p-5 text-center">
                 <h3
                   className="font-game text-lg"
-                  style={{ color: f.accent, textShadow: `0 2px 0 ${f.shadow}` }}
+                  style={{
+                    color: f.accent,
+                    WebkitTextStroke: "1px #000",
+                    paintOrder: "stroke fill",
+                    textShadow: "0 2px 0 #000",
+                  }}
                 >
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
                   {f.desc}
                 </p>
               </div>
