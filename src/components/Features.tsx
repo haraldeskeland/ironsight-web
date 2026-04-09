@@ -74,9 +74,8 @@ export default function Features() {
               </div>
               <div className="p-5 text-center">
                 <h3
-                  className="font-game text-lg"
+                  className="font-game text-lg text-white"
                   style={{
-                    color: f.accent,
                     WebkitTextStroke: "1px #000",
                     paintOrder: "stroke fill",
                     textShadow: "0 2px 0 #000",

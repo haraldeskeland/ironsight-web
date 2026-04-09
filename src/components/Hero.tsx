@@ -29,24 +29,26 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/loading-2.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#034a7e]/90 via-[#045D9E]/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E]/90 via-transparent to-transparent" />
+      {/* Black overlay — not blue */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E] via-transparent to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-6 pt-20 md:pt-28">
         <div className="max-w-xl">
           <p
             data-hero-sub
-            className="reveal-hidden coc-text font-game text-xl text-[#FFDC2F]"
+            className="reveal-hidden font-game text-xl text-white"
+            style={{
+              WebkitTextStroke: "1px #000",
+              paintOrder: "stroke fill",
+              textShadow: "0 3px 0 #000",
+            }}
           >
             Tower Defense Action Shooter
           </p>
           <h1
             data-hero-title
-            className="reveal-hidden mt-3 font-game text-5xl leading-none md:text-7xl"
-            style={{
-              color: "#ffffff",
-              textShadow: "0 -3px #000, 0 0 #000, 0 3px #000, 0 6px #000, -2px -2px #000, 2px -2px #000, 2px 0 #000, -2px 0 #000, 2px 2px #000, -2px 2px #000, 2px 3px #000, -2px 3px #000, 2px 4px #000, -2px 4px #000",
-            }}
+            className="reveal-hidden game-text mt-3 font-game text-5xl leading-none md:text-7xl"
           >
             IRONSIGHT
           </h1>
@@ -58,14 +60,13 @@ export default function Hero() {
             <a href="#" className="btn-primary">
               <span>Download Free</span>
             </a>
-            <a href="#features" className="btn-outline">
+            <a href="#features" className="btn-secondary">
               <span>Learn More</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Stats inside hero */}
       <div className="relative">
         <StatsBar />
       </div>

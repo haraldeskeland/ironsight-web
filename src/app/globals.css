@@ -39,7 +39,7 @@ body {
 }
 
 @layer components {
-  /* Hard drop shadow text — solid black offset, no blur */
+  /* Hard drop shadow text — single solid offset, no blur */
   .game-text {
     color: #ffffff;
     -webkit-text-stroke: 2.5px #000000;
@@ -52,17 +52,15 @@ body {
     text-shadow: none;
   }
 
-  /* CoC-style multi-directional text extrusion */
-  .coc-text {
-    text-shadow:
-      0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
-      -1px -1px #000, 1px -1px #000,
-      1px 0 #000, -1px 0 #000,
-      1px 1px #000, -1px 1px #000,
-      1px 2px #000, -1px 2px #000;
+  /* Shared button text style */
+  .btn-text {
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 3px 0 #000;
+    letter-spacing: -0.02em;
   }
 
-  /* 3D Game Buttons — CoC/Brawl Stars hybrid */
+  /* 3D Game Buttons */
   .btn-primary {
     position: relative;
     display: inline-flex;
@@ -70,14 +68,15 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 12px;
-    padding: 16px 36px;
+    padding: 18px 42px;
     font-family: var(--font-lilita);
     font-size: 1.2rem;
     line-height: 1.2em;
+    letter-spacing: -0.02em;
     color: #ffffff;
     -webkit-text-stroke: 1px #000;
     paint-order: stroke fill;
-    text-shadow: 0 2px 0 #000, 0 4px 0 rgba(0,0,0,0.4);
+    text-shadow: 0 3px 0 #000;
     background: linear-gradient(180deg, #fff3a0 0%, #FFDC2F 20%, #FEB72F 60%, #d48800 100%);
     border: 1px solid #000;
     box-shadow:
@@ -134,14 +133,15 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 12px;
-    padding: 16px 36px;
+    padding: 18px 42px;
     font-family: var(--font-lilita);
     font-size: 1.2rem;
     line-height: 1.2em;
+    letter-spacing: -0.02em;
     color: #ffffff;
     -webkit-text-stroke: 1px #000;
     paint-order: stroke fill;
-    text-shadow: 0 2px 0 #000, 0 4px 0 rgba(0,0,0,0.4);
+    text-shadow: 0 3px 0 #000;
     background: linear-gradient(180deg, #d3ebb7 0%, #85c03f 40%, #366c1b 100%);
     border: 1px solid #000;
     box-shadow:
@@ -191,76 +191,41 @@ body {
       0 3px 0 2px rgba(0,0,0,0.2);
   }
 
-  .btn-outline {
+  /* Game panel — 3D depth with black border, inner gradient, shine */
+  .game-panel {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 12px;
-    padding: 16px 36px;
-    font-family: var(--font-lilita);
-    font-size: 1.2rem;
-    line-height: 1.2em;
-    color: #ffffff;
-    -webkit-text-stroke: 1px #000;
-    paint-order: stroke fill;
-    text-shadow: 0 2px 0 #000, 0 4px 0 rgba(0,0,0,0.4);
-    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+    background: linear-gradient(180deg, #035a9a 0%, #034a7e 100%);
     border: 1px solid #000;
+    border-radius: 16px;
     box-shadow:
       0 0 0 1px #000,
       0 0 0 2px #000,
       0 6px 0 2px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: transform 0.1s linear;
-    text-decoration: none;
+    overflow: hidden;
   }
-  .btn-outline::before {
+  .game-panel::before {
     position: absolute;
     content: "";
     inset: 3px;
-    border-radius: 9px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+    border-radius: 13px;
+    background: linear-gradient(180deg, #0468af 0%, #035090 100%);
     box-shadow: inset 0 0 4px 1px rgba(255,255,255,0.1);
     z-index: 0;
   }
-  .btn-outline::after {
+  .game-panel::after {
     position: absolute;
     content: "";
     top: 4px;
     right: 6px;
     left: 6px;
-    height: 45%;
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 60%, transparent 100%);
+    height: 40%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
     z-index: 1;
   }
-  .btn-outline > * {
+  .game-panel > * {
     position: relative;
     z-index: 2;
-  }
-  .btn-outline:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 0 0 1px #000,
-      0 0 0 2px #FFDC2F,
-      0 8px 0 2px rgba(0,0,0,0.3);
-  }
-  .btn-outline:active {
-    transform: scale(0.95);
-    box-shadow:
-      0 0 0 1px #000,
-      0 0 0 2px #000,
-      0 3px 0 2px rgba(0,0,0,0.2);
-  }
-
-  /* Game panel — dark blue with black border for pop */
-  .game-panel {
-    background: linear-gradient(180deg, #035a9a 0%, #034a7e 100%);
-    border: 3px solid #000000;
-    border-radius: 20px;
-    box-shadow: 0 6px 0 #001a33, 0 8px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
   }
 
   .reveal-hidden {
