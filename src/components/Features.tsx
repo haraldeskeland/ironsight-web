@@ -39,7 +39,6 @@ export default function Features() {
 
   return (
     <section id="features" className="relative py-16">
-      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/sprites/Background_03.png')" }}
@@ -47,34 +46,25 @@ export default function Features() {
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <h2
-          className="text-center font-game text-4xl text-white"
-          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
-        >
+        <h2 className="game-text text-center font-game text-4xl">
           BUILT FOR BATTLE
         </h2>
-        <p className="mt-2 text-center text-text-secondary">
+        <p className="mt-2 text-center text-white/60">
           Everything you need to defend, upgrade, and dominate
         </p>
 
-        <div ref={ref} className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={ref} className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}
               data-feature-card
-              className="reveal-hidden group overflow-hidden rounded-xl transition-transform duration-200 hover:-translate-y-1"
-              style={{
-                border: "2px solid rgba(255,255,255,0.15)",
-                borderBottom: `5px solid ${f.accent}`,
-                boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
-              }}
+              className="reveal-hidden game-panel overflow-hidden transition-transform duration-200 hover:-translate-y-1"
             >
-              {/* Icon header area - warm gold/orange */}
               <div
-                className="flex items-center justify-center py-4"
+                className="flex items-center justify-center py-5"
                 style={{
-                  background: `linear-gradient(135deg, ${f.accent}33, ${f.accent}15)`,
-                  borderBottom: "1px solid rgba(255,255,255,0.1)",
+                  background: `linear-gradient(135deg, ${f.accent}30, ${f.accent}10)`,
+                  borderBottom: "2px solid rgba(255,255,255,0.08)",
                 }}
               >
                 <div
@@ -82,24 +72,25 @@ export default function Features() {
                   style={{
                     background: "rgba(0,0,0,0.2)",
                     border: `2px solid ${f.accent}55`,
+                    boxShadow: `0 0 12px ${f.accent}30`,
                   }}
                 >
                   <Image src={f.icon} alt={f.title} width={36} height={36} />
                 </div>
               </div>
-
-              {/* Card body - dark blue */}
-              <div
-                className="p-5 text-center"
-                style={{ background: "linear-gradient(180deg, #034a7e, #023562)" }}
-              >
+              <div className="p-5 text-center">
                 <h3
-                  className="font-game text-lg text-white"
-                  style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}
+                  className="font-game text-lg"
+                  style={{
+                    color: f.accent,
+                    WebkitTextStroke: "1px #1a1a1a",
+                    paintOrder: "stroke fill",
+                    textShadow: "0 2px 0 #1a1a1a",
+                  }}
                 >
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
                   {f.desc}
                 </p>
               </div>

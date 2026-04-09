@@ -58,7 +58,7 @@ export default function Characters() {
 
       <div className="relative mx-auto max-w-6xl px-6">
         <h2
-          className="text-center font-game text-4xl text-white"
+          className="game-text text-center font-game text-4xl"
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
         >
           COLLECT &amp; LEVEL 33 CHARACTERS

@@ -24,29 +24,45 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
-      {/* Hero background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/loading-1.jpg')" }}
       />
-      {/* Dark gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#034a7e]/95 via-[#045D9E]/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#045D9E] via-transparent to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
         <div className="max-w-xl">
-          <p data-hero-sub className="reveal-hidden text-sm font-semibold text-accent-gold">
+          <p
+            data-hero-sub
+            className="reveal-hidden font-game text-lg"
+            style={{
+              color: "#FFDC2F",
+              WebkitTextStroke: "1px #6b4400",
+              paintOrder: "stroke fill",
+              textShadow: "0 2px 0 #6b4400, 0 3px 8px rgba(0,0,0,0.4)",
+            }}
+          >
             Tower Defense Action Shooter
           </p>
-          <h1 data-hero-title className="reveal-hidden mt-3 font-game text-6xl leading-none text-white md:text-7xl" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.4)" }}>
+          <h1
+            data-hero-title
+            className="reveal-hidden mt-3 font-game text-6xl leading-none md:text-8xl"
+            style={{
+              color: "#ffffff",
+              WebkitTextStroke: "3px #1a1a1a",
+              paintOrder: "stroke fill",
+              textShadow: "0 4px 0 #1a1a1a, 0 6px 16px rgba(0,0,0,0.5)",
+            }}
+          >
             IRONSIGHT
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-text-secondary">
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-white/80">
             Defend your base. Arm your towers. Unleash hell. Run, gun, and build
             defenses in real time as waves of enemies storm from every direction.
           </p>
           <div data-hero-cta className="reveal-hidden mt-8 flex flex-wrap gap-4">
-            <a href="#" className="btn-primary text-xl">
+            <a href="#" className="btn-primary">
               Download Free
             </a>
             <a href="#features" className="btn-outline">
