@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 const rarityColors: Record<string, { color: string; dark: string }> = {
   Common:    { color: "#b8b8b8", dark: "#6a6a6a" },
@@ -29,19 +30,21 @@ export default function Characters() {
       <div className="absolute inset-0 bg-black/35" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <h2 className="game-text text-center font-game text-4xl">
-          COLLECT & LEVEL 33 CHARACTERS
-        </h2>
-        <p className="mt-3 text-center text-white/70">
-          Five rarity tiers from Common to Mythic
-        </p>
+        <ScrollReveal>
+          <h2 className="game-text text-center font-game text-4xl">
+            COLLECT & LEVEL 33 CHARACTERS
+          </h2>
+          <p className="mt-3 text-center text-white/70">
+            Five rarity tiers from Common to Mythic
+          </p>
+        </ScrollReveal>
 
         <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
           {characters.map((c) => {
             const r = rarityColors[c.rarity];
             return (
+              <ScrollReveal key={c.name}>
               <div
-                key={c.name}
                 className="flex flex-col items-center transition-transform duration-200 hover:-translate-y-3"
               >
                 {/* Glow + character */}
@@ -111,6 +114,7 @@ export default function Characters() {
                   </span>
                 </div>
               </div>
+              </ScrollReveal>
             );
           })}
         </div>

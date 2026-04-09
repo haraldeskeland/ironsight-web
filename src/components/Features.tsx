@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 const features = [
   { icon: "/sprites/Icon_Sword.png", title: "24 Weapons", desc: "From pistols to the BFG-9000. Six rarity tiers, each with 5 upgradable stats." },
@@ -13,17 +14,19 @@ export default function Features() {
   return (
     <section id="features" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="game-text-dark text-center font-game text-4xl">
-          BUILT FOR BATTLE
-        </h2>
-        <p className="mt-2 text-center text-gray-500">
-          Everything you need to defend, upgrade, and dominate
-        </p>
+        <ScrollReveal>
+          <h2 className="game-text-dark text-center font-game text-4xl">
+            BUILT FOR BATTLE
+          </h2>
+          <p className="mt-2 text-center text-gray-500">
+            Everything you need to defend, upgrade, and dominate
+          </p>
+        </ScrollReveal>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
+            <ScrollReveal key={f.title}>
             <div
-              key={f.title}
               className="game-panel p-6 text-center transition-transform duration-200 hover:-translate-y-1"
             >
               <div className="mx-auto mb-4">
@@ -43,6 +46,7 @@ export default function Features() {
                 {f.desc}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
