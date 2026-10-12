@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
 
 export const metadata = {
   title: "Support — Ironsight",
@@ -31,9 +31,15 @@ export default function SupportPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">SUPPORT</h1>
-      <p className="mt-2 text-text-secondary">Need help? Send us a message and we will get back to you.</p>
-      <div className="mt-10">
-        <ContactForm />
+      <p className="mt-2 text-text-secondary">Need help? Email us and we will get back to you.</p>
+      <div className="mt-10 rounded-2xl border border-white/5 bg-card p-5">
+        <a href="mailto:harald@konturdesign.no?subject=Ironsight%20support" className="font-game text-lg text-accent-gold hover:underline">
+          harald@konturdesign.no
+        </a>
+        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+          Tell us your player ID (shown in the game&apos;s Settings), your device and what happened. To delete your
+          account, see <Link href="/delete-account" className="text-accent-gold hover:underline">Delete your account</Link>.
+        </p>
       </div>
       <div className="mt-16">
         <h2 className="font-game text-2xl text-white">FAQ</h2>
