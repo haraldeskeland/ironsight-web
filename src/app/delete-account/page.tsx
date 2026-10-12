@@ -10,7 +10,8 @@ export default function DeleteAccountPage() {
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">DELETE YOUR ACCOUNT</h1>
       <p className="mt-2 text-sm text-text-secondary">
-        How to delete your Ironsight account and the data linked to it, made by HMT Eskeland.
+        How to delete your account in Ironsight (Ironsight TD on Google Play) and the data linked to it. Ironsight is
+        made by HMT Eskeland, the developer shown as Harald Eskeland on Google Play.
       </p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
 

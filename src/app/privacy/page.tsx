@@ -13,9 +13,10 @@ export default function PrivacyPage() {
 
         <section>
           <p>
-            This policy explains what data Ironsight (the &quot;Game&quot;) collects on iOS and Android, why, who we share it
-            with, and how you can delete it. The Game is made by HMT Eskeland (&quot;we&quot;, &quot;us&quot;), which is
-            responsible for your data.
+            This policy explains what data Ironsight (the &quot;Game&quot;, listed as Ironsight TD on Google Play) collects on
+            iOS and Android, why, who we share it with, and how you can delete it. The Game is made by HMT Eskeland, the
+            developer shown as Harald Eskeland on Google Play (&quot;we&quot;, &quot;us&quot;), which is responsible for
+            your data.
           </p>
         </section>
 
