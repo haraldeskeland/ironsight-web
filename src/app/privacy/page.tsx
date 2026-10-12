@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy — Ironsight",
 };
@@ -6,93 +8,158 @@ export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">PRIVACY POLICY</h1>
-      <p className="mt-2 text-sm text-text-secondary">Effective: April 8, 2026</p>
+      <p className="mt-2 text-sm text-text-secondary">Effective: October 12, 2026</p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">1. Information We Collect</h2>
           <p>
-            Ironsight is designed to be played without creating an account. We collect limited data to operate and improve the game:
-          </p>
-          <ul className="mt-3 list-disc list-inside space-y-1">
-            <li>Gameplay data such as levels completed, wave progress, and in-game actions</li>
-            <li>Device information including device model, operating system version, and language settings</li>
-            <li>Crash reports and performance diagnostics to fix bugs and improve stability</li>
-            <li>In-app purchase receipts validated by Apple (we do not receive your payment details)</li>
-          </ul>
-          <p className="mt-3">
-            We do not require you to create an account, provide your name, or share any contact information to play Ironsight.
+            This policy explains what data Ironsight (the &quot;Game&quot;) collects on iOS and Android, why, who we share it
+            with, and how you can delete it. The Game is made by HMT Eskeland (&quot;we&quot;, &quot;us&quot;), which is
+            responsible for your data.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">2. Advertising</h2>
+          <h2 className="font-game text-xl text-white mb-3">1. Your Game Account</h2>
           <p>
-            Ironsight shows optional rewarded advertisements provided by third-party ad networks, including IronSource/LevelPlay and Unity Ads. These networks may collect and use certain identifiers to serve relevant ads:
+            The first time you play, the Game creates an account for your installation automatically, with a random login
+            kept on your device. You never give us an email address or a password. Linked to that account we store:
           </p>
           <ul className="mt-3 list-disc list-inside space-y-1">
-            <li>Advertising identifier (IDFA on iOS) — used with your permission to personalise ads</li>
-            <li>IP address and general location data used for regional ad targeting</li>
-            <li>Ad interaction data such as views and clicks</li>
-          </ul>
-          <p className="mt-3">
-            On iOS, we request your App Tracking Transparency (ATT) permission before accessing the IDFA. You can opt out of personalised advertising at any time via Settings &gt; Privacy &amp; Security &gt; Tracking on your device. Non-personalised ads will still be shown.
-          </p>
-          <p className="mt-3">
-            Third-party ad networks are governed by their own privacy policies. We encourage you to review them:
-          </p>
-          <ul className="mt-3 list-disc list-inside space-y-1">
-            <li>IronSource: <span className="text-accent-gold">ironsrc.com/privacy-policy</span></li>
-            <li>Unity Ads: <span className="text-accent-gold">unity.com/legal/privacy-policy</span></li>
+            <li>A player ID, and the nickname and profile picture you choose</li>
+            <li>Your game progress (a cloud save), so it is kept if the app is reinstalled on the same device</li>
+            <li>Clan membership and the messages you send in clan chat, which other members of your clan can read</li>
+            <li>Duel, tournament and leaderboard results, shown to other players with your nickname</li>
+            <li>Recordings of your side of a duel, which may be replayed to other players as a recorded rival</li>
+            <li>Referral codes and in-game mail such as gifts and rewards</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">3. Analytics</h2>
+          <h2 className="font-game text-xl text-white mb-3">2. Purchases</h2>
           <p>
-            We collect anonymous gameplay analytics to understand how the game is played and to balance difficulty, features, and content. Analytics data cannot be used to identify you personally. It includes events such as level start/complete, wave reached, and feature usage counts. Analytics are retained for 12 months and then deleted.
+            In-app purchases are processed by the Apple App Store or Google Play. We never see your payment details. We
+            receive the purchase receipt, check it with Apple or Google, and record the product and transaction ID with your
+            player ID so the purchase is delivered once and can be restored.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">4. In-App Purchases</h2>
-          <p>
-            All in-app purchases are processed by Apple through the App Store. We do not collect, store, or have access to your payment card details or billing information. Purchase receipts are validated server-side to unlock content, but no financial data is retained on our end.
+          <h2 className="font-game text-xl text-white mb-3">3. Device, Analytics and Crash Data</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Device information: model, operating system version, language, app version and a device identifier</li>
+            <li>Gameplay events, such as levels started and completed, features used and offers shown, to balance and improve the Game</li>
+            <li>Crash reports and performance diagnostics, to find and fix bugs</li>
+          </ul>
+          <p className="mt-3">
+            We use Google Firebase (Analytics and Crashlytics) for this, alongside our own game servers.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">5. Children&apos;s Privacy</h2>
+          <h2 className="font-game text-xl text-white mb-3">4. Advertising and Attribution</h2>
           <p>
-            Ironsight is rated 9+ on the App Store. We do not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the address below and we will delete it promptly. We comply with the Children&apos;s Online Privacy Protection Act (COPPA).
+            The Game shows ads, including optional rewarded ads, through Unity LevelPlay (ironSource), which works with
+            Google AdMob and Unity Ads. To measure where installs come from, we use AppsFlyer. These services may collect:
+          </p>
+          <ul className="mt-3 list-disc list-inside space-y-1">
+            <li>Your device&apos;s advertising ID (the IDFA on iOS, the Google advertising ID on Android)</li>
+            <li>Your IP address, and an approximate location derived from it</li>
+            <li>Ad interactions such as views, clicks and installs</li>
+          </ul>
+          <p className="mt-3">
+            Ads are personalised only where you allow it. In the EEA, the UK and Switzerland, the Game asks for your consent
+            with Google&apos;s consent form before any ads are requested, and you can change your answer at any time under
+            Privacy choices in the Game&apos;s Settings. On iOS, the Game asks for permission before using the IDFA, and you
+            can change it in Settings &gt; Privacy &amp; Security &gt; Tracking. On Android, you can reset or delete your
+            advertising ID in your device&apos;s Settings &gt; Privacy &gt; Ads. Non-personalised ads may still be shown.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">6. Data Retention</h2>
-          <p>
-            Anonymous analytics data is retained for 12 months. Advertising data is retained per the policies of the respective third-party ad networks. Crash and diagnostic data is retained for up to 90 days. We do not retain any data beyond what is necessary for the stated purposes.
+          <h2 className="font-game text-xl text-white mb-3">5. Who We Share Data With</h2>
+          <p>We share data only with the service providers that run the Game, each under its own privacy policy:</p>
+          <ul className="mt-3 list-disc list-inside space-y-1">
+            <li>Supabase: hosts our game servers and database</li>
+            <li>Google Firebase: analytics and crash reports</li>
+            <li>Unity LevelPlay (ironSource), Google AdMob and Unity Ads: advertising</li>
+            <li>AppsFlyer: install attribution</li>
+            <li>Apple and Google: purchases and app distribution</li>
+          </ul>
+          <p className="mt-3">
+            Some of these providers process data outside the EEA. Where they do, they rely on safeguards such as the European
+            Commission&apos;s standard contractual clauses. We do not sell your personal data.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">7. Your Rights</h2>
+          <h2 className="font-game text-xl text-white mb-3">6. Notifications</h2>
           <p>
-            You have the right to request deletion of any data associated with your device. To submit a deletion request, contact us via our <span className="text-accent-gold">Support page</span>. We will process your request within 30 days. Note that anonymous, aggregated analytics data cannot be attributed to a specific user and cannot be individually deleted.
+            The Game&apos;s notifications are scheduled on your device, and only if you allow them. We do not collect a push
+            token or send notifications from our servers.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">8. Changes to This Policy</h2>
+          <h2 className="font-game text-xl text-white mb-3">7. Children</h2>
           <p>
-            We may update this Privacy Policy from time to time. When we do, we will revise the effective date at the top of this page. If changes are material, we may notify you within the app. Continued use of Ironsight after changes are posted constitutes your acceptance of the updated policy.
+            Ironsight is for players aged 13 and older, and the Game asks for your age before you play on. We do not knowingly
+            collect personal data from children under 13. If you believe a child has given us personal data, contact us and
+            we will delete it.
           </p>
         </section>
 
         <section>
-          <h2 className="font-game text-xl text-white mb-3">9. Contact</h2>
+          <h2 className="font-game text-xl text-white mb-3">8. How Long We Keep Data</h2>
           <p>
-            If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us via the <span className="text-accent-gold">Support page</span> on this website.
+            Account data is kept for as long as your account exists. On our servers, clan chat messages and duel recordings
+            are deleted after 30 days, crash reports after 45 days and gameplay events after 90 days. Firebase keeps its
+            analytics and crash data for the periods Google sets for it, and advertising data is kept according to the
+            policies of the advertising providers.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-game text-xl text-white mb-3">9. Deleting Your Account and Data</h2>
+          <p>
+            You can delete your account and the data linked to it at any time, in the Game under Settings &gt; Delete account,
+            or by request without the Game. See{" "}
+            <Link href="/delete-account" className="text-accent-gold hover:underline">Delete your account</Link> for how,
+            and for what is deleted.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-game text-xl text-white mb-3">10. Security</h2>
+          <p>
+            Data sent between the Game and our servers is encrypted in transit. Access to our database is limited to what each
+            part of the Game needs.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-game text-xl text-white mb-3">11. Your Rights</h2>
+          <p>
+            Depending on where you live, you have the right to access, correct or delete your data, to object to or restrict
+            its use, and to take it with you. To use any of these rights, contact us through the Support page. If you are in
+            the EEA, you may also complain to your data protection authority; in Norway, that is Datatilsynet.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-game text-xl text-white mb-3">12. Changes to This Policy</h2>
+          <p>
+            We may update this policy. When we do, we change the effective date at the top of this page, and we tell you in
+            the Game if the change is significant.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-game text-xl text-white mb-3">13. Contact</h2>
+          <p>
+            Questions about this policy or your data: use the{" "}
+            <Link href="/support" className="text-accent-gold hover:underline">Support page</Link> or email{" "}
+            <span className="text-accent-gold">phonegame.support@gmail.com</span>.
           </p>
           <p className="mt-3">
             <strong className="text-white">Company:</strong> HMT Eskeland

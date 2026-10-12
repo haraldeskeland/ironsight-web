@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">TERMS OF SERVICE</h1>
-      <p className="mt-2 text-sm text-text-secondary">Effective: April 8, 2026</p>
+      <p className="mt-2 text-sm text-text-secondary">Effective: October 12, 2026</p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
 
         <section>
@@ -26,15 +26,15 @@ export default function TermsPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">3. In-App Purchases</h2>
           <p>
-            The Game offers optional in-app purchases including gems, starter packs, and the Battle Pass. All purchases are processed by Apple through the App Store and are subject to Apple&apos;s payment terms. We do not process payments directly.
+            The Game offers optional in-app purchases including gems, starter packs, and the Battle Pass. All purchases are processed by Apple through the App Store or by Google through Google Play, and are subject to that store&apos;s payment terms. We do not process payments directly.
           </p>
           <ul className="mt-3 list-disc list-inside space-y-1">
-            <li>All in-app purchases are final and non-refundable, except where required by applicable law or Apple&apos;s refund policy.</li>
+            <li>All in-app purchases are final and non-refundable, except where required by applicable law or the refund policy of the store you bought from.</li>
             <li>Virtual currency and items purchased have no real-world monetary value and cannot be exchanged for cash.</li>
             <li>We reserve the right to modify, discontinue, or rebalance in-game items and currencies at any time.</li>
           </ul>
           <p className="mt-3">
-            For refund requests, please contact Apple Support directly.
+            For refund requests, please contact Apple Support or Google Play support, depending on where you bought.
           </p>
         </section>
 

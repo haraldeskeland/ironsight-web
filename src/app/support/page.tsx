@@ -7,7 +7,7 @@ export const metadata = {
 const faqs = [
   {
     q: "How do I restore my purchases?",
-    a: "Go to Settings in the game and tap 'Restore Purchases'. Make sure you're signed in with the same Apple ID you used to make the purchase.",
+    a: "Go to Settings in the game and tap 'Restore Purchases'. Make sure you're signed in with the same Apple ID or Google account you used to make the purchase.",
   },
   {
     q: "The game is crashing on startup",
