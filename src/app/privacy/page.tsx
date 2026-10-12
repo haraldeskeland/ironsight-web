@@ -141,7 +141,7 @@ export default function PrivacyPage() {
           <h2 className="font-game text-xl text-white mb-3">11. Your Rights</h2>
           <p>
             Depending on where you live, you have the right to access, correct or delete your data, to object to or restrict
-            its use, and to take it with you. To use any of these rights, contact us through the Support page. If you are in
+            its use, and to take it with you. To use any of these rights, email us at the address below. If you are in
             the EEA, you may also complain to your data protection authority; in Norway, that is Datatilsynet.
           </p>
         </section>
@@ -157,9 +157,8 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">13. Contact</h2>
           <p>
-            Questions about this policy or your data: use the{" "}
-            <Link href="/support" className="text-accent-gold hover:underline">Support page</Link> or email{" "}
-            <span className="text-accent-gold">phonegame.support@gmail.com</span>.
+            Questions about this policy or your data: email{" "}
+            <a href="mailto:harald@konturdesign.no" className="text-accent-gold hover:underline">harald@konturdesign.no</a>.
           </p>
           <p className="mt-3">
             <strong className="text-white">Company:</strong> HMT Eskeland

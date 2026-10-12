@@ -29,11 +29,10 @@ export default function DeleteAccountPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">Without the Game</h2>
           <p>
-            If you no longer have the Game installed, send a request through the{" "}
-            <Link href="/support" className="text-accent-gold hover:underline">Support page</Link> with the subject
-            &quot;Account Issue&quot;, or email <span className="text-accent-gold">phonegame.support@gmail.com</span>.
-            Include your player ID (shown in the Game&apos;s Settings) or your nickname. We delete the account within 30
-            days and confirm by email.
+            If you no longer have the Game installed, email{" "}
+            <a href="mailto:harald@konturdesign.no?subject=Delete%20my%20Ironsight%20account" className="text-accent-gold hover:underline">harald@konturdesign.no</a>{" "}
+            with the subject &quot;Delete my Ironsight account&quot;. Include your player ID (shown in the Game&apos;s
+            Settings) or your nickname. We delete the account within 30 days and confirm by email.
           </p>
         </section>
 
