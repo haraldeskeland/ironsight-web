@@ -40,7 +40,7 @@ export default function DeleteAccountPage() {
         <section>
           <h2 className="font-game text-xl text-white mb-3">What Is Deleted</h2>
           <ul className="list-disc list-inside space-y-1">
-            <li>Your account and its login, player ID, nickname and profile picture</li>
+            <li>Your account and its login, player ID, nickname and profile picture, and its link to Game Center</li>
             <li>Your game progress (the cloud save), clan membership and clan chat messages</li>
             <li>Your duel, tournament and leaderboard entries, duel recordings, referral codes and in-game mail</li>
             <li>Gameplay events and crash reports linked to your player ID</li>

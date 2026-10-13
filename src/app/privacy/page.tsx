@@ -8,7 +8,7 @@ export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">PRIVACY POLICY</h1>
-      <p className="mt-2 text-sm text-text-secondary">Effective: October 12, 2026</p>
+      <p className="mt-2 text-sm text-text-secondary">Effective: October 13, 2026</p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
 
         <section>
@@ -29,6 +29,11 @@ export default function PrivacyPage() {
           <ul className="mt-3 list-disc list-inside space-y-1">
             <li>A player ID, and the nickname and profile picture you choose</li>
             <li>Your game progress (a cloud save), so it is kept if the app is reinstalled on the same device</li>
+            <li>
+              On iOS, if you are signed in to Game Center, your Game Center player ID, checked with Apple, so the Game can
+              offer your account back after a reinstall or on a new device. The Game never posts to Game Center, and you
+              can play without it.
+            </li>
             <li>Clan membership and the messages you send in clan chat, which other members of your clan can read</li>
             <li>Duel, tournament and leaderboard results, shown to other players with your nickname</li>
             <li>Recordings of your side of a duel, which may be replayed to other players as a recorded rival</li>
