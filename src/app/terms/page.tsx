@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="font-game text-4xl text-white">TERMS OF SERVICE</h1>
-      <p className="mt-2 text-sm text-text-secondary">Effective: October 12, 2026</p>
+      <p className="mt-2 text-sm text-text-secondary">Effective: October 13, 2026</p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
 
         <section>
@@ -49,7 +49,15 @@ export default function TermsPage() {
             <li>Modifying, adapting, translating, or creating derivative works based on the Game</li>
             <li>Using the Game for any commercial purpose without our express written consent</li>
             <li>Attempting to gain unauthorised access to our servers, systems, or other users&apos; accounts</li>
+            <li>Posting offensive, hateful, sexual, threatening or illegal content, in clan chat, in player or clan names and descriptions, or anywhere else in the Game</li>
+            <li>Harassing, bullying, threatening, impersonating or spamming other players</li>
           </ul>
+          <p className="mt-3">
+            We do not tolerate objectionable content or abusive players. You can report a player or a message in the Game
+            (tap their message in clan chat, or tap Report on their profile), and block a player so you no longer see their
+            messages. We review reports, remove content that breaks these rules, and may suspend or end the access of the
+            players who posted it (see Termination).
+          </p>
         </section>
 
         <section>
